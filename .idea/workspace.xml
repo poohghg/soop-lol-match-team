@@ -4,115 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.prettierrc" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/global-error.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/not-found.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/middleware.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/constant/router.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/constant/size.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/head/metadata.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/head/viewport.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_base.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_spacing.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_typography.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/index.css" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/ui/ClientRoot.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/ui/MainLayout.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/ui/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/constant/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/Fetch.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/constant/header.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/constant/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/model/HttpStatusCode.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/model/Response.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/model/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/api/model/type.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/error/BaseError.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/error/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/formatCurrency/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/useAutoClose.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/useControlledState.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/useDebounceState.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/useThrottledCallback.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/hooks/useTransitionState.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/hooks/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/hooks/useResetPrevInfiniteQuery.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/lib/getDehydratedQuery.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/lib/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/model/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/model/reactQuery.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/ui/ReactQueryProvider.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactQuery/ui/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactUtils/createContext.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactUtils/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/reactUtils/utils.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/upbitSocket/UpbitSubscriptionManager.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/upbitSocket/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/upbitSocket/type.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/upbitSocket/useUpbitSocketBase.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/utils/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/README.md" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/lib/useWebSocket.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/model/SocketManager.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/model/SocketTransport.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/model/socketManagerStore.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/lib/webSocket/model/type.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/type/reactElement.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBarContext.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/HighlightValue/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Icons/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Icons/ui/LoadCircleIcon.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/If/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/InfiniteScrollTrigger/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/ScrollIntoView/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/SearchBar.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SeeMoreList/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/ServerFetcher/ServerFetcher.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/ServerFetcher/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SkeletonBox/SkeletonBox.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SkeletonBox/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SwitchCase/SwitchCase.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SwitchCase/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/Context.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/model/type.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/Tabs.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsList.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsListActive.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsPanel.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsTrigger.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Toast/ToastList.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Toast/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Toast/lib/useToast.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Toast/model/ToastManager.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Toast/model/type.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/lib/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Button/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Label/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/RadioGroup/index.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Spacing/Spacing.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Spacing/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Tooltop/Tooltop.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/widgets/MainHeader/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/widgets/MainHeader/ui/MainHeader.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/widgets/MainHeader/ui/Navbar.tsx" afterDir="false" />
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="add initial component exports and setup for UI elements">
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/list/route.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/page.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_theme.css" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/index.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchCoins.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSortCoins.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/favoriteCoinStore.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/index.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/type.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoriteCoinButton.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesCoins.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/index.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/index.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/AddPlayerModal.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerListSection.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/globals.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/globals.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/eslint.config.mjs" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/tsconfig.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/tsconfig.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/middleware.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/middleware.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_base.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_base.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/index.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/index.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsListActive.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsListActive.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +43,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$/Desktop/workspace/soop-lol-match-team" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "poohghg"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/poohghg/soop-lol-match-team.git",
+    "accountId": "deded5b0-ff9f-4dd7-950e-d2346783ea4f"
+  }
+}]]></component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
@@ -146,7 +76,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/app",
+    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/src/features",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -155,6 +85,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/prettier",
     "rearrange.code.on.save": "true",
     "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/typescript/lib",
@@ -163,6 +94,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team" />
@@ -182,11 +114,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772011878218</updated>
-      <workItem from="1772011879268" duration="551000" />
+      <workItem from="1772011879268" duration="9337000" />
     </task>
+    <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
+      <option name="closed" value="true" />
+      <created>1772012493278</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1772012493278</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add initial component exports and setup for UI elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial component exports and setup for UI elements" />
   </component>
 </project>

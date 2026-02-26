@@ -25,7 +25,7 @@ const TabsListActive = ({
   useEffect(() => {
     // resize 대응
     const handleResize = () => {
-      const activeEl = document.getElementById('tabs-list-active-indicator') as HTMLDivElement;
+      const activeEl = document.getElementById('tabs-teamMatch-active-indicator') as HTMLDivElement;
       if (activeEl && selectedKey) {
         const selectedTab = document.getElementById(`tab-${selectedKey}`);
         if (selectedTab) {

@@ -7,7 +7,7 @@ import React, { useMemo, useRef, useState } from 'react';
 
 interface SearchBarProps {
   value: string;
-  onInputChange: (newQuery: string) => void;
+  onChange: (newQuery: string) => void;
   useDebounce?: boolean;
   debounceDelay?: number;
   placeholder?: string;
@@ -18,7 +18,7 @@ interface SearchBarProps {
 
 const SearchBar = ({
   value,
-  onInputChange,
+  onChange,
   useDebounce = false,
   debounceDelay = 100,
   placeholder,
@@ -33,9 +33,9 @@ const SearchBar = ({
   const debouncedSetQuery = useMemo(
     () =>
       debounce((newQuery: string) => {
-        onInputChange(newQuery);
+        onChange(newQuery);
       }, debounceDelay),
-    [onInputChange, debounceDelay]
+    [onChange, debounceDelay]
   );
 
   const handleInputChange = (newQuery: string) => {
@@ -43,15 +43,15 @@ const SearchBar = ({
       setLocalQuery(newQuery);
       debouncedSetQuery(newQuery);
     } else {
-      onInputChange(newQuery);
+      onChange(newQuery);
     }
   };
 
   return (
     <div
       className={cn(
-        'relative w-full rounded-lg border border-transparent bg-gray-800 transition-all duration-150',
-        'border-2 border-gray-700 focus-within:border-blue-500',
+        'relative w-full rounded-lg border border-transparent transition-all duration-150',
+        'border-2 focus-within:border-blue-500',
         className
       )}
     >
@@ -75,7 +75,7 @@ const SearchBar = ({
           ref={inputRef}
           type="text"
           className={cn(
-            'w-full border-none bg-transparent py-2 pr-4 pl-10 text-sm text-white placeholder-gray-500 outline-none focus:ring-0',
+            'w-full border-none bg-transparent py-2 pr-4 pl-10 placeholder-gray-500 outline-none focus:ring-0',
             inputClassName
           )}
           placeholder={placeholder ?? 'Search...'}

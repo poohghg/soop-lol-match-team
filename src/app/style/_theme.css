@@ -1,0 +1,227 @@
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Base colors */
+        --background: 255 255 255; /* 흰색 */
+        --foreground: 0 0 0; /* 검정색 */
+        --primary: 37 99 235; /* 파랑 포인트 컬러 */
+        --primary-foreground: 255 255 255;
+
+        /* Card colors */
+        --card: 249 250 251; /* 연한 회색 */
+        --card-foreground: 0 0 0;
+        --card-border: 229 231 235;
+
+        /* Muted colors */
+        --muted: 243 244 246;
+        --muted-foreground: 107 114 128;
+
+        /* Border & Input */
+        --border: 229 231 235;
+        --input: 229 231 235;
+        --input-background: 249 250 251;
+
+        /* Position colors */
+        --position-top: 239 68 68; /* Red */
+        --position-jungle: 34 197 94; /* Green */
+        --position-mid: 59 130 246; /* Blue */
+        --position-adc: 234 179 8; /* Yellow */
+        --position-support: 168 85 247; /* Purple */
+
+        /* Status colors */
+        --success: 34 197 94;
+        --warning: 234 179 8;
+        --error: 239 68 68;
+        --info: 59 130 246;
+
+        /* Font */
+        --font-size: 16px;
+        --font-weight-medium: 500;
+        --font-weight-normal: 400;
+    }
+
+    .dark {
+        /* Base colors */
+        --background: 2 6 23; /* 다크 배경 */
+        --foreground: 248 250 252; /* 밝은 텍스트 */
+        --primary: 96 165 250; /* 다크모드 포인트 컬러 */
+        --primary-foreground: 2 6 23;
+
+        /* Card colors */
+        --card: 15 23 42; /* 다크 카드 */
+        --card-foreground: 248 250 252;
+        --card-border: 30 41 59;
+
+        /* Muted colors */
+        --muted: 30 41 59;
+        --muted-foreground: 148 163 184;
+
+        /* Border & Input */
+        --border: 30 41 59;
+        --input: 30 41 59;
+        --input-background: 15 23 42;
+
+        /* Position colors (slightly brighter for dark mode) */
+        --position-top: 248 113 113; /* Lighter Red */
+        --position-jungle: 74 222 128; /* Lighter Green */
+        --position-mid: 96 165 250; /* Lighter Blue */
+        --position-adc: 250 204 21; /* Lighter Yellow */
+        --position-support: 192 132 252; /* Lighter Purple */
+
+        /* Status colors */
+        --success: 74 222 128;
+        --warning: 250 204 21;
+        --error: 248 113 113;
+        --info: 96 165 250;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    html {
+        font-size: var(--font-size);
+    }
+
+    h1 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h3 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h4 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    label {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    button {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    input {
+        font-weight: var(--font-weight-normal);
+        line-height: 1.5;
+    }
+}
+
+@theme {
+    --color-background: rgb(var(--background));
+    --color-foreground: rgb(var(--foreground));
+    --color-primary: rgb(var(--primary));
+    --color-primary-foreground: rgb(var(--primary-foreground));
+    --color-card: rgb(var(--card));
+    --color-card-foreground: rgb(var(--card-foreground));
+    --color-card-border: rgb(var(--card-border));
+    --color-muted: rgb(var(--muted));
+    --color-muted-foreground: rgb(var(--muted-foreground));
+    --color-border: rgb(var(--border));
+    --color-input: rgb(var(--input));
+    --color-input-background: rgb(var(--input-background));
+    --color-position-top: rgb(var(--position-top));
+    --color-position-jungle: rgb(var(--position-jungle));
+    --color-position-mid: rgb(var(--position-mid));
+    --color-position-adc: rgb(var(--position-adc));
+    --color-position-support: rgb(var(--position-support));
+    --color-success: rgb(var(--success));
+    --color-warning: rgb(var(--warning));
+    --color-error: rgb(var(--error));
+    --color-info: rgb(var(--info));
+}
+
+@layer utilities {
+    .bg-position-top {
+        background-color: rgb(var(--position-top));
+    }
+
+    .bg-position-jungle {
+        background-color: rgb(var(--position-jungle));
+    }
+
+    .bg-position-mid {
+        background-color: rgb(var(--position-mid));
+    }
+
+    .bg-position-adc {
+        background-color: rgb(var(--position-adc));
+    }
+
+    .bg-position-support {
+        background-color: rgb(var(--position-support));
+    }
+
+    .text-position-top {
+        color: rgb(var(--position-top));
+    }
+
+    .text-position-jungle {
+        color: rgb(var(--position-jungle));
+    }
+
+    .text-position-mid {
+        color: rgb(var(--position-mid));
+    }
+
+    .text-position-adc {
+        color: rgb(var(--position-adc));
+    }
+
+    .text-position-support {
+        color: rgb(var(--position-support));
+    }
+
+    .border-position-top {
+        border-color: rgb(var(--position-top) / 0.5);
+    }
+
+    .border-position-jungle {
+        border-color: rgb(var(--position-jungle) / 0.5);
+    }
+
+    .border-position-mid {
+        border-color: rgb(var(--position-mid) / 0.5);
+    }
+
+    .border-position-adc {
+        border-color: rgb(var(--position-adc) / 0.5);
+    }
+
+    .border-position-support {
+        border-color: rgb(var(--position-support) / 0.5);
+    }
+
+    .bg-position-top\/20 {
+        background-color: rgb(var(--position-top) / 0.2);
+    }
+
+    .bg-position-jungle\/20 {
+        background-color: rgb(var(--position-jungle) / 0.2);
+    }
+
+    .bg-position-mid\/20 {
+        background-color: rgb(var(--position-mid) / 0.2);
+    }
+
+    .bg-position-adc\/20 {
+        background-color: rgb(var(--position-adc) / 0.2);
+    }
+
+    .bg-position-support\/20 {
+        background-color: rgb(var(--position-support) / 0.2);
+    }
+}
