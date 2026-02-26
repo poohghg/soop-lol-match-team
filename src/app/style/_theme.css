@@ -8,6 +8,7 @@
         --primary: 37 99 235; /* 파랑 포인트 컬러 */
         --primary-foreground: 255 255 255;
 
+
         /* Card colors */
         --card: 249 250 251; /* 연한 회색 */
         --card-foreground: 0 0 0;
@@ -75,49 +76,6 @@
         --error: 248 113 113;
         --info: 96 165 250;
     }
-
-    body {
-        @apply bg-background text-foreground;
-    }
-
-    html {
-        font-size: var(--font-size);
-    }
-
-    h1 {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    h2 {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    h3 {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    h4 {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    label {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    button {
-        font-weight: var(--font-weight-medium);
-        line-height: 1.5;
-    }
-
-    input {
-        font-weight: var(--font-weight-normal);
-        line-height: 1.5;
-    }
 }
 
 @theme {
@@ -125,6 +83,8 @@
     --color-foreground: rgb(var(--foreground));
     --color-primary: rgb(var(--primary));
     --color-primary-foreground: rgb(var(--primary-foreground));
+    --color-red: rgb(var(--position-top));
+    --color-blue: rgb(var(--position-mid));
     --color-card: rgb(var(--card));
     --color-card-foreground: rgb(var(--card-foreground));
     --color-card-border: rgb(var(--card-border));

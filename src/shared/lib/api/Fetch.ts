@@ -124,7 +124,7 @@ export default class FetchBuilder {
   private buildUrl(): string {
     const domain = this.getDomain();
     const url = `${domain}${this._url}`;
-    return this._method === 'GET' ? this.buildUrlWithParams(url) : `${url}`;
+    return this._method === 'GET' ? this.buildUrlWithParams(url) : url;
   }
 
   private buildUrlWithParams(url: string): string {
@@ -152,6 +152,13 @@ export default class FetchBuilder {
 
   private getDomain() {
     if (IS_NODE) {
+      // 스키마가 있으면 리턴한다.
+      if (this._url.startsWith('http://') || this._url.startsWith('https://')) {
+        return '';
+      }
+
+      // 현재 도메인을 가져와야한다.
+
       return this._useMock && USE_MOCK ? MOCK_API_URL : API_URL;
     }
     return '';

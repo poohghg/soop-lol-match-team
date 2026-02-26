@@ -13,6 +13,48 @@
         color: var(--foreground);
         font-family: Arial, Helvetica, sans-serif;
         @apply min-h-screen;
+        @apply bg-background text-foreground;
+    }
+
+    h1 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h3 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    h4 {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    label {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    button {
+        font-weight: var(--font-weight-medium);
+        line-height: 1.5;
+    }
+
+    button:not(:disabled),
+    [role='button']:not(:disabled) {
+        cursor: pointer;
+    }
+
+
+    input {
+        font-weight: var(--font-weight-normal);
+        line-height: 1.5;
     }
 
     .safe-top {
@@ -21,10 +63,5 @@
 
     .safe-bottom {
         padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    button:not(:disabled),
-    [role='button']:not(:disabled) {
-        cursor: pointer;
     }
 }

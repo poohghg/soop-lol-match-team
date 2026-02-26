@@ -75,7 +75,7 @@ const SearchBar = ({
           ref={inputRef}
           type="text"
           className={cn(
-            'w-full border-none bg-transparent py-2 pr-4 pl-10 placeholder-gray-500 outline-none focus:ring-0',
+            'w-full border-none bg-transparent py-2 pr-4 pl-10 text-[14px] placeholder-gray-500 outline-none focus:ring-0',
             inputClassName
           )}
           placeholder={placeholder ?? 'Search...'}

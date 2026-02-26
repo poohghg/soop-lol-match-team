@@ -1,15 +1,9 @@
 'use client';
 
+import { Player } from '@/src/entities/player';
 import { TeamSlot } from '@/src/page/teamMatch/ui/TeamMatchPage';
 import { Heart, Plus, Shield, Sparkles, Sword, Target, X } from 'lucide-react';
-
-interface TeamMatchSectionProps {
-  teams: TeamSlot[][];
-  onAddTeam: () => void;
-  onRemoveTeam: (teamIndex: number) => void;
-  onOpenModal: (teamIndex: number, positionIdx: number) => void;
-  onRemovePlayer: (teamIndex: number, positionIdx: number) => void;
-}
+import { useState } from 'react';
 
 const positionIcons = {
   1: Shield,
@@ -52,13 +46,74 @@ const positionClasses = {
   },
 };
 
-export function TeamMatch({ teams, onAddTeam, onRemoveTeam, onOpenModal, onRemovePlayer }: TeamMatchSectionProps) {
+interface TeamMatchSectionProps {
+  players: Player[];
+}
+
+export function TeamMatch({ players }: TeamMatchSectionProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [teams, setTeams] = useState<TeamSlot[][]>([
+    [
+      { position: '탑', positionIdx: 1, player: null },
+      { position: '정글', positionIdx: 2, player: null },
+      { position: '미드', positionIdx: 3, player: null },
+      { position: '원딜', positionIdx: 4, player: null },
+      { position: '서폿', positionIdx: 5, player: null },
+    ],
+  ]);
+  const [selectedTeamIndex, setSelectedTeamIndex] = useState<number | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<number | null>(null);
+
+  const handleAddTeam = () => {
+    setTeams([
+      ...teams,
+      [
+        { position: '탑', positionIdx: 1, player: null },
+        { position: '정글', positionIdx: 2, player: null },
+        { position: '미드', positionIdx: 3, player: null },
+        { position: '원딜', positionIdx: 4, player: null },
+        { position: '서폿', positionIdx: 5, player: null },
+      ],
+    ]);
+  };
+
+  const handleRemoveTeam = (teamIndex: number) => {
+    if (teams.length > 1) {
+      setTeams(teams.filter((_, index) => index !== teamIndex));
+    }
+  };
+
+  const handleOpenModal = (teamIndex: number, positionIdx: number) => {
+    setSelectedTeamIndex(teamIndex);
+    setSelectedPosition(positionIdx);
+    setIsModalOpen(true);
+  };
+
+  const handleSelectPlayer = (player: Player) => {
+    if (selectedTeamIndex !== null && selectedPosition !== null) {
+      const newTeams = [...teams];
+      const slotIndex = newTeams[selectedTeamIndex].findIndex(slot => slot.positionIdx === selectedPosition);
+      newTeams[selectedTeamIndex][slotIndex].player = player;
+      setTeams(newTeams);
+      setIsModalOpen(false);
+      setSelectedTeamIndex(null);
+      setSelectedPosition(null);
+    }
+  };
+
+  const handleRemovePlayer = (teamIndex: number, positionIdx: number) => {
+    const newTeams = [...teams];
+    const slotIndex = newTeams[teamIndex].findIndex(slot => slot.positionIdx === positionIdx);
+    newTeams[teamIndex][slotIndex].player = null;
+    setTeams(newTeams);
+  };
+
   return (
     <section className="mb-12">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-foreground text-2xl font-bold">팀 매칭</h2>
         <button
-          onClick={onAddTeam}
+          onClick={handleAddTeam}
           className="from-primary flex transform items-center gap-2 rounded-lg bg-gradient-to-r to-purple-600 px-4 py-2 text-white transition-all hover:scale-105 hover:opacity-90"
         >
           <Plus className="h-4 w-4" />새 팀 추가
@@ -75,7 +130,7 @@ export function TeamMatch({ teams, onAddTeam, onRemoveTeam, onOpenModal, onRemov
               <h3 className="text-foreground text-lg font-semibold">팀 #{teamIndex + 1}</h3>
               {teams.length > 1 && (
                 <button
-                  onClick={() => onRemoveTeam(teamIndex)}
+                  onClick={() => handleRemoveTeam(teamIndex)}
                   className="text-muted-foreground transition-colors hover:text-red-500"
                 >
                   <X className="h-5 w-5" />
@@ -108,7 +163,7 @@ export function TeamMatch({ teams, onAddTeam, onRemoveTeam, onOpenModal, onRemov
                             <p className="text-muted-foreground truncate text-xs">{slot.player.gameNick}</p>
                           </div>
                           <button
-                            onClick={() => onRemovePlayer(teamIndex, slot.positionIdx)}
+                            onClick={() => handleRemovePlayer(teamIndex, slot.positionIdx)}
                             className="text-muted-foreground ml-2 transition-colors hover:text-red-500"
                           >
                             <X className="h-4 w-4" />
@@ -126,7 +181,7 @@ export function TeamMatch({ teams, onAddTeam, onRemoveTeam, onOpenModal, onRemov
                       </div>
                     ) : (
                       <button
-                        onClick={() => onOpenModal(teamIndex, slot.positionIdx)}
+                        onClick={() => handleOpenModal(teamIndex, slot.positionIdx)}
                         className="border-border hover:border-muted-foreground text-muted-foreground hover:text-foreground w-full rounded-lg border-2 border-dashed py-3 text-sm transition-all"
                       >
                         + 선수 추가
@@ -139,6 +194,20 @@ export function TeamMatch({ teams, onAddTeam, onRemoveTeam, onOpenModal, onRemov
           </div>
         ))}
       </div>
+      {/*{isModalOpen && (*/}
+      {/*  <AddPlayerModal*/}
+      {/*    players={players}*/}
+      {/*    positionIdx={selectedPosition}*/}
+      {/*    onSelectPlayer={handleSelectPlayer}*/}
+      {/*    onClose={() => {*/}
+      {/*      setIsModalOpen(false);*/}
+      {/*      setSelectedTeamIndex(null);*/}
+      {/*      setSelectedPosition(null);*/}
+      {/*    }}*/}
+      {/*    favorites={favorites}*/}
+      {/*    onToggleFavorite={handleToggleFavorite}*/}
+      {/*  />*/}
+      {/*)}*/}
     </section>
   );
 }

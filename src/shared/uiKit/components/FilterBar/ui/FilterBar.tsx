@@ -6,7 +6,6 @@ import {
   FilterBarContextProvider,
   useFilterBarContext,
 } from '@/src/shared/uiKit/components/FilterBar/ui/FilterBarContext';
-import { Button } from '@/src/shared/uiKit/ui';
 import { MouseEvent, ReactNode, useEffect, useState } from 'react';
 
 interface FilterButtonProps {
@@ -73,12 +72,12 @@ export const FilterButton = ({ children, value, ...props }: MergeElementProps<'b
 
   const handleClick = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     setSelectedValue(value);
-    props.onClick && props.onClick(e);
+    onClick?.(e);
   };
 
   return (
     <button
-      className={`z-1 inline-flex flex-grow-1 items-center justify-center rounded-[6px] p-0 text-[13px] font-bold transition-all duration-100 select-none ${isSelected ? 'text-blue-600' : 'text-gray-500 hover:bg-gray-200/50 hover:text-gray-700'} ${className} `}
+      className={`z-1 flex flex-1 items-center justify-center rounded-[6px] p-0 text-[13px] font-bold transition-all duration-100 select-none ${isSelected ? 'text-blue-600' : 'text-gray-500 hover:bg-gray-200/50 hover:text-gray-700'} ${className} `}
       onClick={handleClick}
       value={value}
       {...restProps}
