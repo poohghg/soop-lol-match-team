@@ -100,7 +100,7 @@ export class DerivedPlayer implements Player {
   }
 
   get positionIdx() {
-    return this.props.positionIdx as PositionIdx;
+    return this.props.positionIdx.toString() as PositionIdx;
   }
 
   get position() {

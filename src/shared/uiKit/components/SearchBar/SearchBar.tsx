@@ -19,7 +19,7 @@ interface SearchBarProps {
 const SearchBar = ({
   value,
   onChange,
-  useDebounce = false,
+  useDebounce = true,
   debounceDelay = 100,
   placeholder,
   className,

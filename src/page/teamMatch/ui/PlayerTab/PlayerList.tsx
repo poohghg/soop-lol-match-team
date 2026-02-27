@@ -1,41 +1,41 @@
 import { Player } from '@/src/entities/player';
 import { LazyFavoritePlayerButton } from '@/src/features/player/ui/FavoritePlayerButton';
 import { copyToClipboard } from '@/src/shared/lib/utils';
-import { toasts } from '@/src/shared/uiKit';
+import { SeeMoreList, toasts } from '@/src/shared/uiKit';
 import { ToolTip } from '@/src/shared/uiKit/ui/Tooltop/Tooltop';
 import { CircleHelp, Heart, Radio, Shield, Sparkles, Sword, Target } from 'lucide-react';
 import Link from 'next/link';
 
 const positionIcons = {
-  1: Shield,
-  2: Sword,
-  3: Sparkles,
-  4: Target,
-  5: Heart,
+  '1': Shield,
+  '2': Sword,
+  '3': Sparkles,
+  '4': Target,
+  '5': Heart,
 };
 
 const positionClasses = {
-  1: {
+  '1': {
     bg: 'bg-position-top',
     text: 'text-position-top',
     bgLight: 'bg-position-top/20',
   },
-  2: {
+  '2': {
     bg: 'bg-position-jungle',
     text: 'text-position-jungle',
     bgLight: 'bg-position-jungle/20',
   },
-  3: {
+  '3': {
     bg: 'bg-position-mid',
     text: 'text-position-mid',
     bgLight: 'bg-position-mid/20',
   },
-  4: {
+  '4': {
     bg: 'bg-position-adc',
     text: 'text-position-adc',
     bgLight: 'bg-position-adc/20',
   },
-  5: {
+  '5': {
     bg: 'bg-position-support',
     text: 'text-position-support',
     bgLight: 'bg-position-support/20',
@@ -159,9 +159,10 @@ const PlayerListRow = ({ player }: { player: Player }) => {
 
 interface PlayerListProps {
   players: Player[];
+  queryKey?: string;
 }
 
-export const PlayerList = ({ players }: PlayerListProps) => {
+export const PlayerList = ({ players, queryKey }: PlayerListProps) => {
   if (players.length === 0) {
     return (
       <div className="text-muted-foreground col-span-full py-12 text-center">
@@ -172,9 +173,9 @@ export const PlayerList = ({ players }: PlayerListProps) => {
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {players.map(player => (
-        <PlayerListRow key={player.memberIdx} player={player} />
-      ))}
+      <SeeMoreList key={queryKey} data={players} pageSize={30} isInfiniteScroll>
+        {currentPlayers => currentPlayers.map(player => <PlayerListRow key={player.memberIdx} player={player} />)}
+      </SeeMoreList>
     </div>
   );
 };

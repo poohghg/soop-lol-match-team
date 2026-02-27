@@ -28,7 +28,7 @@ const InfiniteScrollTrigger = ({
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           onIntersect();
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
         }
       });
     };
@@ -36,7 +36,7 @@ const InfiniteScrollTrigger = ({
     const observer = new IntersectionObserver(callBack, {
       root: intersectionOptions?.root || null,
       rootMargin: intersectionOptions?.rootMargin || '0px',
-      threshold: intersectionOptions?.threshold || 0.1,
+      threshold: intersectionOptions?.threshold || 1.0,
     });
 
     observer.observe(triggerRef.current);

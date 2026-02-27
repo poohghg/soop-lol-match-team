@@ -1,50 +1,44 @@
 'use client';
 
 import { Player } from '@/src/entities/player';
+import { usePositionFilter, useSearchPlayer } from '@/src/features/player';
 import { PlayerList } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
-import { FilterBar, SearchBar, Spacing, Tabs, TabsList, TabsListActive, TabsTrigger } from '@/src/shared/uiKit';
-import { useState } from 'react';
+import { PlayTabsList } from '@/src/page/teamMatch/ui/PlayerTab/PlayTabsList';
+import { PositionFilter } from '@/src/page/teamMatch/ui/PlayerTab/PositionFilter';
+import { SearchBar, Spacing, Tabs } from '@/src/shared/uiKit';
 
 interface PlayerListSectionProps {
   players: Player[];
+  positionCountMap: Record<string, number>;
 }
 
-export function PlayerTab({ players }: PlayerListSectionProps) {
-  const [searchQuery, setSearchQuery] = useState('');
+export function PlayerTab({ players, positionCountMap }: PlayerListSectionProps) {
+  const { filteredPlayers, positionIdx, updatePositionIdx } = usePositionFilter(players);
+  const { searchedPlayer, setQuery, searchQuery } = useSearchPlayer(filteredPlayers);
+  const queryKey = `${searchQuery.trim().toLowerCase()}-${positionIdx}`;
 
   return (
     <section>
       <h2 className="text-foreground mb-6 text-2xl font-bold">선수 리스트</h2>
-      <div className="bg-card border-card-border rounded-xl border p-6 shadow-sm backdrop-blur-sm">
+      <div className="bg-card border-card-border rounded-xl border p-2 shadow-sm backdrop-blur-sm">
         <Tabs defaultKey={'list'}>
-          <TabsList className="border-border border-b">
-            <TabsListActive className="from-primary bg-gradient-to-r to-purple-500" type="underline" />
-            <TabsTrigger tabKey={'list'} className={`px-4 pb-3 font-semibold`}>
-              전체 리스트
-            </TabsTrigger>
-            <TabsTrigger tabKey={'favorites'} className={`flex items-center gap-1 px-4 pb-3 font-semibold`}>
-              즐겨찾기
-            </TabsTrigger>
-          </TabsList>
+          <PlayTabsList />
           <Spacing size={16} />
           <SearchBar
             className="text-muted-foreground focus-within:text-foreground border-border"
             value={searchQuery}
-            onChange={query => setSearchQuery(query)}
+            onChange={query => setQuery(query)}
             placeholder="선수 이름 또는 게임 닉네임 검색..."
           />
           <Spacing size={16} />
-          <FilterBar defaultValue={'0'}>
-            <FilterBar.Active />
-            <FilterBar.Button value={'0'}>전체</FilterBar.Button>
-            <FilterBar.Button value={'1'}>탑</FilterBar.Button>
-            <FilterBar.Button value={'2'}>정글</FilterBar.Button>
-            <FilterBar.Button value={'3'}>미드</FilterBar.Button>
-            <FilterBar.Button value={'4'}>원딜</FilterBar.Button>
-            <FilterBar.Button value={'5'}>서폿</FilterBar.Button>
-          </FilterBar>
+          <PositionFilter
+            // totalCount={totalCount}
+            // positionCountMap={positionCountMap}
+            positionIdx={positionIdx}
+            updatePositionIdx={updatePositionIdx}
+          />
           <Spacing size={16} />
-          <PlayerList players={players} />
+          <PlayerList players={searchedPlayer} queryKey={queryKey} />
         </Tabs>
       </div>
     </section>

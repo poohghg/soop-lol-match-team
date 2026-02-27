@@ -12,6 +12,11 @@ export interface TeamSlot {
 async function TeamMatchPage() {
   const { players, positionCountMap, totalCount } = await playerRepository.getPlayers();
 
+  // const positionCounts = {
+  //   0: totalCount,
+  //   ...positionCountMap,
+  // };
+
   return (
     <div className="from-background via-background to-muted min-h-screen bg-gradient-to-br">
       <div className="container mx-auto max-w-7xl px-4 py-8">
@@ -30,7 +35,13 @@ async function TeamMatchPage() {
           {/*</button>*/}
         </header>
         <TeamMatch players={players} />
-        <PlayerTab players={players} />
+        <PlayerTab
+          players={players}
+          positionCountMap={{
+            '0': totalCount,
+            ...positionCountMap,
+          }}
+        />
       </div>
     </div>
   );

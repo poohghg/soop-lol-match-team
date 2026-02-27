@@ -5,7 +5,7 @@ export interface MatchPlayer {
 }
 
 export type Position = '전체' | '탑' | '정글' | '미드' | '원딜' | '서폿';
-export type PositionIdx = 0 | 1 | 2 | 3 | 4 | 5; //0:전체, 1: 탑, 2: 정글, 3: 미드, 4: 원딜, 5: 서폿
+export type PositionIdx = '0' | '1' | '2' | '3' | '4' | '5'; //0:전체, 1: 탑, 2: 정글, 3: 미드, 4: 원딜, 5: 서폿
 export type PointCalcType = 'none' | 'penalty' | 'advantage';
 
 export interface Player {
