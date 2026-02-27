@@ -1,4 +1,4 @@
-import { Player, Position, PositionIdx } from '@/src/entities/player/model/type';
+import { Player, PointCalcType, Position, PositionIdx } from '@/src/entities/player/model/type';
 
 const positionNames: Record<PositionIdx, Position> = {
   0: '전체',
@@ -59,6 +59,10 @@ export class DerivedPlayer implements Player {
     return this.props.gameNick;
   }
 
+  get totalGameNickList() {
+    return this.props.totalGameNickList;
+  }
+
   get grade() {
     return this.props.grade;
   }
@@ -76,7 +80,7 @@ export class DerivedPlayer implements Player {
   }
 
   get matchCntCalc() {
-    return this.props.matchCntCalc;
+    return this.signedCalcPoint(this.props.matchCntCalc, this.props.matchCntCalcType);
   }
 
   get matchCntCalcType() {
@@ -120,7 +124,7 @@ export class DerivedPlayer implements Player {
   }
 
   get tierCalc() {
-    return this.props.tierCalc;
+    return this.signedCalcPoint(this.props.tierCalc, this.props.tierCalcType);
   }
 
   get tierCalcType() {
@@ -129,10 +133,6 @@ export class DerivedPlayer implements Player {
 
   get totalCalc() {
     return this.props.totalCalc;
-  }
-
-  get totalGameNickList() {
-    return this.props.totalGameNickList;
   }
 
   get userId() {
@@ -177,5 +177,17 @@ export class DerivedPlayer implements Player {
       userNick: this.userNick,
       soopPageUrl: this.soopPageUrl,
     };
+  }
+
+  private signedCalcPoint(point: number, calcType: PointCalcType) {
+    if (calcType === 'penalty') {
+      return Math.abs(point);
+    }
+
+    if (calcType === 'advantage') {
+      return -Math.abs(point);
+    }
+
+    return 0;
   }
 }

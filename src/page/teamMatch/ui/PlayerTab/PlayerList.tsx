@@ -1,7 +1,10 @@
 import { Player } from '@/src/entities/player';
 import { LazyFavoritePlayerButton } from '@/src/features/player/ui/FavoritePlayerButton';
+import { copyToClipboard } from '@/src/shared/lib/utils';
+import { toasts } from '@/src/shared/uiKit';
 import { ToolTip } from '@/src/shared/uiKit/ui/Tooltop/Tooltop';
-import { Heart, Radio, Shield, Sparkles, Sword, Target } from 'lucide-react';
+import { CircleHelp, Heart, Radio, Shield, Sparkles, Sword, Target } from 'lucide-react';
+import Link from 'next/link';
 
 const positionIcons = {
   1: Shield,
@@ -40,10 +43,10 @@ const positionClasses = {
 };
 
 const getCalcColorClass = (calc: number) => {
-  if (calc > 0) {
-    return 'text-green-500';
-  }
   if (calc < 0) {
+    return 'text-blue-500';
+  }
+  if (calc > 0) {
     return 'text-red-500';
   }
   return 'text-muted-foreground';
@@ -54,6 +57,13 @@ const PlayerListRow = ({ player }: { player: Player }) => {
   const colors = positionClasses[player.positionIdx as keyof typeof positionClasses];
   const calcColor = getCalcColorClass(player.totalCalc);
 
+  const handleCopyClick = async () => {
+    const isSuccess = await copyToClipboard(player.userNick);
+    if (isSuccess) {
+      toasts.success(`${player.userNick} 닉네임이 클립보드에 복사되었습니다.`);
+    }
+  };
+
   return (
     <div
       key={player.memberIdx}
@@ -61,21 +71,22 @@ const PlayerListRow = ({ player }: { player: Player }) => {
     >
       <div className="mb-3 flex items-start justify-between">
         <div className="flex items-center gap-2">
-          <div className={`rounded-lg p-2 ${colors.bgLight} ${colors.text}`}>
-            <ToolTip
-              text={
-                <div
-                  className={`flex items-center gap-1 border text-xs ${colors.bg} text-background z-1 rounded px-2 py-1`}
-                >
-                  {player.position}
-                </div>
-              }
-            >
-              <Icon className="h-4 w-4" />
-            </ToolTip>
-          </div>
+          <ToolTip
+            className={`rounded-lg p-2 ${colors.bgLight} ${colors.text}`}
+            text={
+              <div
+                className={`flex items-center gap-1 border text-xs ${colors.bg} text-background z-1 rounded px-2 py-1`}
+              >
+                {player.position}
+              </div>
+            }
+          >
+            <Icon className="h-4 w-4" />
+          </ToolTip>
           <div className="min-w-0 flex-1">
-            <h3 className="text-foreground truncate font-semibold">{player.userNick}</h3>
+            <h3 role={'button'} className="text-foreground truncate font-semibold" onClick={handleCopyClick}>
+              {player.userNick}
+            </h3>
             <p className="text-muted-foreground truncate text-xs">{player.gameNick}</p>
           </div>
         </div>
@@ -88,7 +99,33 @@ const PlayerListRow = ({ player }: { player: Player }) => {
         </div>
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground text-xs">점수 가감</span>
-          <span className={`text-xs font-semibold ${calcColor}`}>{player.totalCalc}P</span>
+          <div className={`flex items-center gap-1 ${calcColor}`}>
+            <span className={`text-xs font-semibold`}>{player.totalCalc}P</span>
+            {player.totalCalc !== 0 && (
+              <ToolTip
+                text={
+                  <div
+                    className={
+                      'bg-background text-background border-card-border flex flex-col gap-1 rounded-[8px] border p-2 text-xs'
+                    }
+                  >
+                    {player.matchCntCalcType !== 'none' && (
+                      <span className={`text-xs ${getCalcColorClass(player.matchCntCalc)}`}>
+                        판수 : {player.matchCntCalc}P ({player.matchCntCalcType === 'penalty' ? '감점' : '가점'})
+                      </span>
+                    )}
+                    {player.tierCalcType !== 'none' && (
+                      <span className={getCalcColorClass(player.tierCalc)}>
+                        티어 : {player.tierCalc}P ({player.tierCalcType === 'penalty' ? '감점' : '가점'})
+                      </span>
+                    )}
+                  </div>
+                }
+              >
+                <CircleHelp size={14} color="#adb5bd" strokeWidth={2} />
+              </ToolTip>
+            )}
+          </div>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground text-xs">점수</span>
@@ -97,10 +134,14 @@ const PlayerListRow = ({ player }: { player: Player }) => {
       </div>
       <div className="border-border mt-3 flex gap-2 border-t pt-3">
         {player.broading === 'Y' && (
-          <span className="inline-flex items-center gap-1 rounded bg-red-500/20 px-2 py-1 text-xs text-red-500">
+          <Link
+            href={player.soopPageUrl}
+            target={'_blank'}
+            className="inline-flex items-center gap-1 rounded bg-red-500/20 px-2 py-1 text-xs text-red-500"
+          >
             <Radio className="h-3 w-3" />
             방송중
-          </span>
+          </Link>
         )}
         {player.recruitFlag === 'Y' ? (
           <span className="inline-flex items-center rounded bg-green-500/20 px-2 py-1 text-xs text-green-500">

@@ -6,7 +6,7 @@
         --background: 255 255 255; /* 흰색 */
         --foreground: 0 0 0; /* 검정색 */
         --primary: 37 99 235; /* 파랑 포인트 컬러 */
-        --primary-foreground: 255 255 255;
+        --primary-foreground: 255 255 255; /* 흰색 텍스트 */
 
 
         /* Card colors */
@@ -85,6 +85,9 @@
     --color-primary-foreground: rgb(var(--primary-foreground));
     --color-red: rgb(var(--position-top));
     --color-blue: rgb(var(--position-mid));
+    --color-green: rgb(var(--position-jungle));
+    --color-yellow: rgb(var(--position-adc));
+    --color-purple: rgb(var(--position-support));
     --color-card: rgb(var(--card));
     --color-card-foreground: rgb(var(--card-foreground));
     --color-card-border: rgb(var(--card-border));
