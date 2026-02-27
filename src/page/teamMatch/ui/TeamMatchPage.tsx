@@ -35,13 +35,13 @@ async function TeamMatchPage() {
           {/*</button>*/}
         </header>
         <TeamMatch players={players} />
-        <PlayerTab
-          players={players}
-          positionCountMap={{
-            '0': totalCount,
-            ...positionCountMap,
-          }}
-        />
+        {/*<PlayerTab*/}
+        {/*  players={players}*/}
+        {/*  positionCountMap={{*/}
+        {/*    '0': totalCount,*/}
+        {/*    ...positionCountMap,*/}
+        {/*  }}*/}
+        {/*/>*/}
       </div>
     </div>
   );
