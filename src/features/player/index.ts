@@ -1,3 +1,3 @@
 export * from './model';
 export * from './lib';
-// export { FavoriteCoinButton } from './ui';
+export { FavoritePlayerButton, FavoritesPlayers, LazyFavoritePlayerButton } from './ui';

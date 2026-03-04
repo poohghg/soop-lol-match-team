@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 
 export interface FavoriteStoreState {
   favoritePlayerIds: Set<string>;
+  getFavoritePlayerIds: () => string[];
   addFavorite: (playerId: string) => void;
   removeFavorite: (playerId: string) => void;
   toggleFavorite: (playerId: string) => boolean;
@@ -15,6 +16,10 @@ export const useFavoritePlayerStore = create<FavoriteStoreState>()(
   persist(
     (set, get) => ({
       favoritePlayerIds: new Set<string>(),
+
+      getFavoritePlayerIds: () => {
+        return Array.from(get().favoritePlayerIds);
+      },
 
       addFavorite: playerId => {
         set(state => {

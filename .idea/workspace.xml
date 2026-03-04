@@ -4,23 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: implement copyToClipboard utility, and enhance tooltip functionality">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/usePositionFilter.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayTabsList.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PositionFilter.tsx" afterDir="false" />
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add team fetching functionality and implement caching for team data">
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/lib/usePositionCount.ts" afterDir="false" />
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/usecase/TeamMatchService.ts" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/domain.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/domain.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/type.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/type.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/repository.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model/repository.ts" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchCoins.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchPlayer.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesCoins.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesCoins.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchPlayer.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchPlayer.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/favoritePlayerStore.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/favoritePlayerStore.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesCoins.tsx" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/index.ts" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerList.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerList.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerTab.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerTab.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PositionFilter.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PositionFilter.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/InfiniteScrollTrigger/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/InfiniteScrollTrigger/index.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBarContext.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBarContext.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsListActive.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Tabs/ui/TabsListActive.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +73,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/src/entities/player/api&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/teamList&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -88,11 +92,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/teamList" />
+      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/api" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features" />
-      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app" />
-      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerListSection" />
@@ -130,7 +134,9 @@
       <workItem from="1772011879268" duration="14431000" />
       <workItem from="1772109452262" duration="14023000" />
       <workItem from="1772177865678" duration="6425000" />
-      <workItem from="1772184312356" duration="2982000" />
+      <workItem from="1772184312356" duration="3242000" />
+      <workItem from="1772211834816" duration="668000" />
+      <workItem from="1772615936821" duration="11233000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -164,7 +170,31 @@
       <option name="project" value="LOCAL" />
       <updated>1772182041170</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: add player filtering and searching functionality with position filter">
+      <option name="closed" value="true" />
+      <created>1772199466781</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772199466782</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add player filtering and searching functionality with position filter">
+      <option name="closed" value="true" />
+      <created>1772211860311</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772211860311</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add team fetching functionality and implement caching for team data">
+      <option name="closed" value="true" />
+      <created>1772616768194</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772616768194</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +216,8 @@
     <MESSAGE value="add TeamMatchPage and related components for team matching functionality" />
     <MESSAGE value="refactor: player-related components and APIs for improved structure and functionality" />
     <MESSAGE value="feat: implement copyToClipboard utility, and enhance tooltip functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement copyToClipboard utility, and enhance tooltip functionality" />
+    <MESSAGE value="feat: add player filtering and searching functionality with position filter" />
+    <MESSAGE value="feat: add team fetching functionality and implement caching for team data" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add team fetching functionality and implement caching for team data" />
   </component>
 </project>

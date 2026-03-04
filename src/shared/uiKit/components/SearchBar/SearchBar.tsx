@@ -1,9 +1,8 @@
 'use client';
 
 import { cn } from '@/src/shared/uiKit';
-import { debounce } from 'lodash';
 import { SearchIcon } from 'lucide-react';
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useDeferredValue, useEffect, useRef, useState } from 'react';
 
 interface SearchBarProps {
   value: string;
@@ -19,8 +18,6 @@ interface SearchBarProps {
 const SearchBar = ({
   value,
   onChange,
-  useDebounce = true,
-  debounceDelay = 100,
   placeholder,
   className,
   searchIconClassName,
@@ -28,24 +25,15 @@ const SearchBar = ({
 }: SearchBarProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [localQuery, setLocalQuery] = useState(value);
-  const query = useDebounce ? localQuery : value;
-
-  const debouncedSetQuery = useMemo(
-    () =>
-      debounce((newQuery: string) => {
-        onChange(newQuery);
-      }, debounceDelay),
-    [onChange, debounceDelay]
-  );
+  const deferredQuery = useDeferredValue(localQuery);
 
   const handleInputChange = (newQuery: string) => {
-    if (useDebounce) {
-      setLocalQuery(newQuery);
-      debouncedSetQuery(newQuery);
-    } else {
-      onChange(newQuery);
-    }
+    setLocalQuery(newQuery);
   };
+
+  useEffect(() => {
+    onChange(deferredQuery);
+  }, [deferredQuery, onChange]);
 
   return (
     <div
@@ -80,7 +68,7 @@ const SearchBar = ({
           )}
           placeholder={placeholder ?? 'Search...'}
           onChange={e => handleInputChange(e.target.value)}
-          value={query}
+          value={localQuery}
         />
       </form>
     </div>

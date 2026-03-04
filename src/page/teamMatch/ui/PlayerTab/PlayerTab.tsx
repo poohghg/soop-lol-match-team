@@ -1,20 +1,20 @@
 'use client';
 
 import { Player } from '@/src/entities/player';
-import { usePositionFilter, useSearchPlayer } from '@/src/features/player';
+import { FavoritesPlayers, usePositionFilter, useSearchPlayer } from '@/src/features/player';
 import { PlayerList } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
 import { PlayTabsList } from '@/src/page/teamMatch/ui/PlayerTab/PlayTabsList';
 import { PositionFilter } from '@/src/page/teamMatch/ui/PlayerTab/PositionFilter';
-import { SearchBar, Spacing, Tabs } from '@/src/shared/uiKit';
+import { SearchBar, Spacing, Tabs, TabsPanel } from '@/src/shared/uiKit';
 
-interface PlayerListSectionProps {
+interface PlayerTabProps {
   players: Player[];
   positionCountMap: Record<string, number>;
 }
 
-export function PlayerTab({ players, positionCountMap }: PlayerListSectionProps) {
-  const { filteredPlayers, positionIdx, updatePositionIdx } = usePositionFilter(players);
-  const { searchedPlayer, setQuery, searchQuery } = useSearchPlayer(filteredPlayers);
+export function PlayerTab({ players, positionCountMap }: PlayerTabProps) {
+  const { searchedPlayer, searchQuery, setQuery, positionCount } = useSearchPlayer(players, positionCountMap);
+  const { filteredPlayers, positionIdx, updatePositionIdx } = usePositionFilter(searchedPlayer);
   const queryKey = `${searchQuery.trim().toLowerCase()}-${positionIdx}`;
 
   return (
@@ -32,13 +32,19 @@ export function PlayerTab({ players, positionCountMap }: PlayerListSectionProps)
           />
           <Spacing size={16} />
           <PositionFilter
-            // totalCount={totalCount}
-            // positionCountMap={positionCountMap}
+            positionCountMap={positionCount}
             positionIdx={positionIdx}
             updatePositionIdx={updatePositionIdx}
           />
           <Spacing size={16} />
-          <PlayerList players={searchedPlayer} queryKey={queryKey} />
+          <TabsPanel tabKey={'list'}>
+            <PlayerList players={filteredPlayers} queryKey={queryKey} />
+          </TabsPanel>
+          <TabsPanel tabKey={'favorites'}>
+            <FavoritesPlayers players={filteredPlayers}>
+              {favoritesPlayers => <PlayerList players={favoritesPlayers} queryKey={queryKey} />}
+            </FavoritesPlayers>
+          </TabsPanel>
         </Tabs>
       </div>
     </section>

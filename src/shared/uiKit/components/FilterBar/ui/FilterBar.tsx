@@ -65,9 +65,7 @@ export const ActiveFilter = () => {
 };
 export const FilterButton = ({ children, value, ...props }: MergeElementProps<'button', FilterButtonProps>) => {
   const { className, onClick, ...restProps } = props;
-
   const { selectedValue, setSelectedValue } = useFilterBarContext();
-
   const isSelected = selectedValue === value;
 
   const handleClick = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {

@@ -1,9 +1,7 @@
-// import { Coin } from '@/src/entities/coin/model';
-// import { useFavoriteCoinStore } from '@/src/features/coin/model/favoriteCoinStore';
-import { useMemo } from 'react';
+import { Player } from '@/src/entities/player';
+import { useFavoritePlayerStore } from '@/src/features/player/model/favoritePlayerStore';
 
-export const useFavoritesPlayer = (coins: Coin[]) => {
-  const favoriteCoinIds = useFavoriteCoinStore(state => state.favoriteCoinIds);
-  const favoriteCoinIdsSet = useMemo(() => new Set(favoriteCoinIds), [favoriteCoinIds]);
-  return useMemo(() => coins.filter(coin => favoriteCoinIdsSet.has(coin.symbol)), [coins, favoriteCoinIdsSet]);
+export const useFavoritesPlayer = (players: Player[]) => {
+  const favoritePlayerIds = useFavoritePlayerStore(state => state.favoritePlayerIds);
+  return players.filter(player => favoritePlayerIds.has(player.userId));
 };

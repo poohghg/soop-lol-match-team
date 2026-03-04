@@ -15,6 +15,7 @@ export class PlayerRepositoryImpl implements PlayerRepository {
 
   async getPlayers() {
     const res = await this.api.fetchPlayers();
+    await this.api.fetchTeams();
     return {
       players: res.data.faList.map(PlayerMapper.toPlayer),
       totalCount: res.data.totalCount,
@@ -22,5 +23,3 @@ export class PlayerRepositoryImpl implements PlayerRepository {
     };
   }
 }
-
-export const playerRepository = new PlayerRepositoryImpl();

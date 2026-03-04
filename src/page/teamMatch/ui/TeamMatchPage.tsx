@@ -1,7 +1,7 @@
 import { Player } from '@/src/entities/player';
-import { playerRepository } from '@/src/entities/player/model/repository';
 import { PlayerTab } from '@/src/page/teamMatch/ui/PlayerTab/PlayerTab';
 import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch';
+import { teamMatchService } from '@/src/page/teamMatch/usecase/TeamMatchService';
 
 export interface TeamSlot {
   position: string;
@@ -10,12 +10,7 @@ export interface TeamSlot {
 }
 
 async function TeamMatchPage() {
-  const { players, positionCountMap, totalCount } = await playerRepository.getPlayers();
-
-  // const positionCounts = {
-  //   0: totalCount,
-  //   ...positionCountMap,
-  // };
+  const { players, positionCountMap } = await teamMatchService.getPlayers();
 
   return (
     <div className="from-background via-background to-muted min-h-screen bg-gradient-to-br">
@@ -35,13 +30,7 @@ async function TeamMatchPage() {
           {/*</button>*/}
         </header>
         <TeamMatch players={players} />
-        {/*<PlayerTab*/}
-        {/*  players={players}*/}
-        {/*  positionCountMap={{*/}
-        {/*    '0': totalCount,*/}
-        {/*    ...positionCountMap,*/}
-        {/*  }}*/}
-        {/*/>*/}
+        <PlayerTab players={players} positionCountMap={positionCountMap} />
       </div>
     </div>
   );

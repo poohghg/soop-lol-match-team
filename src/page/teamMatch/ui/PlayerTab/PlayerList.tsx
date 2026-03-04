@@ -5,6 +5,7 @@ import { SeeMoreList, toasts } from '@/src/shared/uiKit';
 import { ToolTip } from '@/src/shared/uiKit/ui/Tooltop/Tooltop';
 import { CircleHelp, Heart, Radio, Shield, Sparkles, Sword, Target } from 'lucide-react';
 import Link from 'next/link';
+import { memo } from 'react';
 
 const positionIcons = {
   '1': Shield,
@@ -162,7 +163,7 @@ interface PlayerListProps {
   queryKey?: string;
 }
 
-export const PlayerList = ({ players, queryKey }: PlayerListProps) => {
+export const PlayerList = memo(({ players, queryKey }: PlayerListProps) => {
   if (players.length === 0) {
     return (
       <div className="text-muted-foreground col-span-full py-12 text-center">
@@ -178,4 +179,4 @@ export const PlayerList = ({ players, queryKey }: PlayerListProps) => {
       </SeeMoreList>
     </div>
   );
-};
+});

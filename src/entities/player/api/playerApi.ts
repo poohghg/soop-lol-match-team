@@ -3,6 +3,7 @@ import { MatchPlayerDto, MatchPlayerSchema } from '../model/schema';
 
 export interface PlayerApi {
   fetchPlayers(): Promise<ISuccessResponse<MatchPlayerDto>>;
+  fetchTeams(): Promise<ISuccessResponse<any>>;
 }
 
 export class PlayerApiImpl implements PlayerApi {
@@ -13,5 +14,11 @@ export class PlayerApiImpl implements PlayerApi {
       ...res,
       data: MatchPlayerSchema.parse(res.data),
     };
+  }
+
+  async fetchTeams() {
+    const url = '/api/teams';
+    const res = await new FetchBuilder(url).build().request<any>();
+    return res;
   }
 }

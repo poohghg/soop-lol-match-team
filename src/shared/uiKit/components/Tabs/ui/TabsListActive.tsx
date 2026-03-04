@@ -23,7 +23,6 @@ const TabsListActive = ({
   const { selectedKey } = useTabsContext();
 
   useEffect(() => {
-    // resize 대응
     const handleResize = () => {
       const activeEl = document.getElementById('tabs-teamMatch-active-indicator') as HTMLDivElement;
       if (activeEl && selectedKey) {

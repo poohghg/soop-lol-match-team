@@ -1,8 +1,9 @@
 import { createReactContext } from '@/src/shared/lib/reactUtils';
-import { ReactNode, SetStateAction, useState } from 'react';
+import { ReactNode, SetStateAction, useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 
 interface FilterBarContext {
   selectedValue: string;
+  deferredSelectedValue: string;
   setSelectedValue: (next: SetStateAction<string>) => void;
 }
 
@@ -19,19 +20,30 @@ interface FilterBarProviderProps {
 
 const FilterBarContextProvider = ({ children, defaultValue, onChange }: FilterBarProviderProps) => {
   const [selectedValue, setSelectedValue] = useState<string>(defaultValue);
+  const deferredSelectedValue = useDeferredValue(selectedValue);
 
-  const handleSetSelect = (next: SetStateAction<string>) => {
-    const nextValue = typeof next === 'function' ? next(selectedValue) : next;
-    setSelectedValue(nextValue);
+  const handleSetSelect = useCallback(
+    (next: SetStateAction<string>) => {
+      const nextValue = typeof next === 'function' ? next(selectedValue) : next;
+      setSelectedValue(nextValue);
+    },
+    [selectedValue]
+  );
+
+  const value = useMemo(
+    () => ({
+      selectedValue,
+      deferredSelectedValue,
+      setSelectedValue: handleSetSelect,
+    }),
+    [selectedValue, deferredSelectedValue, handleSetSelect]
+  );
+
+  useEffect(() => {
     if (onChange) {
-      onChange(nextValue);
+      onChange(deferredSelectedValue);
     }
-  };
-
-  const value: FilterBarContext = {
-    selectedValue: selectedValue,
-    setSelectedValue: handleSetSelect,
-  };
+  }, [deferredSelectedValue, onChange]);
 
   return <Provider value={value}>{children}</Provider>;
 };
