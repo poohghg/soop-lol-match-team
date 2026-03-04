@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import { NextResponse } from 'next/server';
 import path from 'path';
 
-const CACHE_PATH = path.join(process.cwd(), 'data', 'soop_cache.json');
+const CACHE_PATH = path.join(process.cwd(), 'data', 'soop__team_list_cache.json');
 const CACHE_TTL = 3 * 60 * 1000;
 // const CACHE_TTL = Infinity;
 
@@ -30,16 +30,17 @@ async function getCachedData() {
   return null;
 }
 
-// 헬퍼: 모든 페이지 데이터 긁어오기
 async function fetchAllData() {
-  const allFaList: any[] = [];
-  const perPage = 500;
+  const allTeamMemberList: any[] = [];
+  const perPage = 100;
   let currentPage = 1;
-  let positionCountMap;
   let totalCount;
 
+  // 헬퍼: 모든 페이지 데이터 긁어오기
+  const url = 'https://gpapi.sooplive.co.kr/api/v1/bjmatchfa/team/list';
+
   while (true) {
-    const res = await fetch('https://gpapi.sooplive.co.kr/api/v1/bjmatchfa/fa/list', {
+    const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,14 +48,10 @@ async function fetchAllData() {
         Referer: 'https://bjmatchfa.sooplive.co.kr/',
       },
       body: JSON.stringify({
-        filter: [],
-        maxPoint: 70,
-        minPoint: 0,
+        filter: '',
         orderType: 'point_desc',
-        pageNo: currentPage,
-        perPageNo: perPage,
-        positionIdx: '',
-        searchBjNick: '',
+        pageNo: 1,
+        perPageNo: 50,
         seasonIdx: 22,
       }),
     });
@@ -65,16 +62,13 @@ async function fetchAllData() {
       totalCount = json.data.totalCount;
     }
 
-    if (!positionCountMap) {
-      positionCountMap = json.data.positionCountMap;
-    }
+    const teamMemberList = json.data?.teamMemberList || [];
+    allTeamMemberList.push(...teamMemberList);
 
-    const faList = json.data?.faList || [];
-    allFaList.push(...faList);
-
-    if (faList.length < perPage) {
+    if (allTeamMemberList.length < perPage) {
       break;
     }
+
     currentPage++;
   }
 
@@ -83,16 +77,14 @@ async function fetchAllData() {
   await fs.writeFile(
     CACHE_PATH,
     JSON.stringify({
-      faList: allFaList,
+      teamMemberList: allTeamMemberList,
       totalCount,
-      positionCountMap,
     })
   );
 
   return {
-    faList: allFaList,
+    teamMemberList: allTeamMemberList,
     totalCount,
-    positionCountMap,
   };
 }
 
@@ -102,9 +94,6 @@ export async function GET() {
     if (!data) {
       data = await fetchAllData();
     }
-
-    console.log('[Player API] Returning data with totalCount:', data);
-
     return NextResponse.json(data);
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
