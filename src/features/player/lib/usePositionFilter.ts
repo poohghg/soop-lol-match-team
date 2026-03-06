@@ -1,11 +1,11 @@
 import { Player } from '@/src/entities/player';
-import { PositionIdx } from '@/src/entities/player/model/type';
+import { PositionIdxWithAll } from '@/src/entities/player/model/type';
 import { useMemo, useState } from 'react';
 
-export const usePositionFilter = (players: Player[], initialPositionIdx: PositionIdx = '0') => {
-  const [positionIdx, setPositionIdx] = useState<PositionIdx>(initialPositionIdx);
+export const usePositionFilter = (players: Player[], initialPositionIdx: PositionIdxWithAll = '0') => {
+  const [positionIdx, setPositionIdx] = useState<PositionIdxWithAll>(initialPositionIdx);
 
-  const updatePositionIdx = (idx: PositionIdx) => {
+  const updatePositionIdx = (idx: PositionIdxWithAll) => {
     setPositionIdx(idx);
   };
 

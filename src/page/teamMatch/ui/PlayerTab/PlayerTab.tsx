@@ -2,10 +2,11 @@
 
 import { Player } from '@/src/entities/player';
 import { FavoritesPlayers, usePositionFilter, useSearchPlayer } from '@/src/features/player';
-import { PlayerList } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
+import { PlayerList } from '@/src/page/teamMatch/ui/PlayerList';
 import { PlayTabsList } from '@/src/page/teamMatch/ui/PlayerTab/PlayTabsList';
 import { PositionFilter } from '@/src/page/teamMatch/ui/PlayerTab/PositionFilter';
 import { SearchBar, Spacing, Tabs, TabsPanel } from '@/src/shared/uiKit';
+import { useMemo } from 'react';
 
 interface PlayerTabProps {
   players: Player[];
@@ -13,9 +14,28 @@ interface PlayerTabProps {
 }
 
 export function PlayerTab({ players, positionCountMap }: PlayerTabProps) {
-  const { searchedPlayer, searchQuery, setQuery, positionCount } = useSearchPlayer(players, positionCountMap);
+  const { searchedPlayer, searchQuery, setQuery, normalizedQuery } = useSearchPlayer(players);
   const { filteredPlayers, positionIdx, updatePositionIdx } = usePositionFilter(searchedPlayer);
   const queryKey = `${searchQuery.trim().toLowerCase()}-${positionIdx}`;
+  const positionCount = useMemo(() => {
+    if (normalizedQuery === '') {
+      return positionCountMap;
+    }
+
+    const map: Record<string, number> = {
+      '0': searchedPlayer.length,
+      '1': 0,
+      '2': 0,
+      '3': 0,
+      '4': 0,
+      '5': 0,
+    };
+
+    searchedPlayer.forEach(player => {
+      map[player.positionIdx] += 1;
+    });
+    return map;
+  }, [searchedPlayer, normalizedQuery, positionCountMap]);
 
   return (
     <section>

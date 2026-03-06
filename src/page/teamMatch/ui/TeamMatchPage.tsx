@@ -1,13 +1,6 @@
-import { Player } from '@/src/entities/player';
 import { PlayerTab } from '@/src/page/teamMatch/ui/PlayerTab/PlayerTab';
-import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch';
+import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch/TeamMatch';
 import { teamMatchService } from '@/src/page/teamMatch/usecase/TeamMatchService';
-
-export interface TeamSlot {
-  position: string;
-  positionIdx: number;
-  player: Player | null;
-}
 
 async function TeamMatchPage() {
   const { players, positionCountMap } = await teamMatchService.getPlayers();

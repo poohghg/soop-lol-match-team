@@ -1,10 +1,10 @@
-import { PositionIdx } from '@/src/entities/player/model/type';
+import { PositionIdxWithAll } from '@/src/entities/player/model/type';
 import { FilterBar } from '@/src/shared/uiKit';
 
 interface PositionFilterProps {
   positionIdx: string;
   positionCountMap: Record<string, number>;
-  updatePositionIdx: (idx: PositionIdx) => void;
+  updatePositionIdx: (idx: PositionIdxWithAll) => void;
 }
 
 export const PositionFilter = ({ positionIdx, updatePositionIdx, positionCountMap }: PositionFilterProps) => {
@@ -12,7 +12,7 @@ export const PositionFilter = ({ positionIdx, updatePositionIdx, positionCountMa
     <FilterBar
       defaultValue={positionIdx}
       onChange={value => {
-        updatePositionIdx(value as PositionIdx);
+        updatePositionIdx(value as PositionIdxWithAll);
       }}
     >
       <FilterBar.Active />

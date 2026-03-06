@@ -18,6 +18,7 @@ export const FavoritePlayerButton = ({ playerId, starClassName }: FavoriteCoinBu
 
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
+    e.stopPropagation();
     const isToggled = toggleFavorite(playerId);
     const message = isToggled ? `${playerId}를 즐겨찾기에 추가했습니다!` : `${playerId}를 즐겨찾기에서 제거했습니다!`;
     toasts.success(message);

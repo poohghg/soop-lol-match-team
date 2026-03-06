@@ -1,7 +1,6 @@
 import { Player, PointCalcType, Position, PositionIdx } from '@/src/entities/player/model/type';
 
 const positionNames: Record<PositionIdx, Position> = {
-  0: '전체',
   1: '탑',
   2: '정글',
   3: '미드',
