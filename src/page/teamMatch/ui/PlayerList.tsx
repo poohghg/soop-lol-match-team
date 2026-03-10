@@ -110,12 +110,12 @@ const PlayerListRow = ({ player }: { player: Player }) => {
                       'bg-background text-background border-card-border flex flex-col gap-1 rounded-[8px] border p-2 text-xs'
                     }
                   >
-                    {player.matchCntCalcType !== 'none' && (
+                    {player.matchCntCalc !== 0 && (
                       <span className={`text-xs ${getCalcColorClass(player.matchCntCalc)}`}>
                         판수 : {player.matchCntCalc}P ({player.matchCntCalcType === 'penalty' ? '감점' : '가점'})
                       </span>
                     )}
-                    {player.tierCalcType !== 'none' && (
+                    {player.tierCalc !== 0 && (
                       <span className={getCalcColorClass(player.tierCalc)}>
                         티어 : {player.tierCalc}P ({player.tierCalcType === 'penalty' ? '감점' : '가점'})
                       </span>

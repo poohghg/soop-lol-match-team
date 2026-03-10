@@ -2,7 +2,7 @@ import getMetadata from '@/src/app/head/metadata';
 import getViewPort from '@/src/app/head/viewport';
 import { ClientRoot } from '@/src/app/ui';
 import { ReactQueryProvider } from '@/src/shared/lib/reactQuery';
-import { ToastList } from '@/src/shared/uiKit';
+import { RootDimmed, ToastList } from '@/src/shared/uiKit';
 import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -41,10 +41,12 @@ export default function RootLayout({
 const RootComponent = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <ReactQueryProvider>
-      <ClientRoot>
-        <div className={'relative isolate z-0 mx-auto flex max-w-[1200px] flex-col'}>{children}</div>
-        <ToastList />
-      </ClientRoot>
+      <RootDimmed>
+        <ClientRoot>
+          <div className={'relative isolate z-0 mx-auto flex max-w-[1200px] flex-col'}>{children}</div>
+          <ToastList />
+        </ClientRoot>
+      </RootDimmed>
     </ReactQueryProvider>
   );
 };

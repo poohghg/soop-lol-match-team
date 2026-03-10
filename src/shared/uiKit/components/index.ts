@@ -1,5 +1,6 @@
 export { SwitchCase } from './SwitchCase';
 export { SkeletonBox } from './SkeletonBox';
+export type { BaseTab } from './Tabs';
 export { Tabs, TabsPanel, TabsListActive, TabsList, TabsTrigger } from './Tabs';
 export { ToastList, toasts } from './Toast';
 export { LoadCircleIcon } from './Icons';
@@ -10,5 +11,5 @@ export { SeeMoreList } from './SeeMoreList';
 export { HighlightValue } from './HighlightValue';
 export { ScrollIntoView } from './ScrollIntoView';
 export { FilterBar } from './FilterBar';
-
-export type { BaseTab } from './Tabs';
+export { Portal } from './Portal';
+export { Dimmed, RootDimmed } from './Dimmed';

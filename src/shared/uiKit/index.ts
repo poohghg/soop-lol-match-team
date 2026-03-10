@@ -16,6 +16,9 @@ export {
   HighlightValue,
   ScrollIntoView,
   FilterBar,
+  Portal,
+  Dimmed,
+  RootDimmed,
 } from './components';
 
 export type { BaseTab } from './components';
