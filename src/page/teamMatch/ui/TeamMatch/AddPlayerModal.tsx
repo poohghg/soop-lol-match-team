@@ -3,25 +3,35 @@
 import { Player, PlayerCard, PlayerView } from '@/src/entities/player';
 import { PositionIdx } from '@/src/entities/player/model/type';
 import { usePositionFilter, useSearchPlayer } from '@/src/features/player';
-import { Dimmed, Portal, SearchBar, SwitchCase } from '@/src/shared/uiKit';
+import { Dialog, Portal, SearchBar, SeeMoreList, SwitchCase } from '@/src/shared/uiKit';
 import { X } from 'lucide-react';
 
 interface AddPlayerModalProps {
+  isOpen: boolean;
+  unMount: () => void;
   players: Player[];
   positionIdx: PositionIdx;
+  query: string;
   onSelectPlayer: (player: Player) => void;
   onClose: () => void;
 }
 
-export function AddPlayerModal({ players, positionIdx, onSelectPlayer, onClose }: AddPlayerModalProps) {
-  const { searchedPlayer, searchQuery, setQuery } = useSearchPlayer(players);
+export function AddPlayerModal({
+  isOpen,
+  unMount,
+  players,
+  positionIdx,
+  query,
+  onSelectPlayer,
+  onClose,
+}: AddPlayerModalProps) {
+  const { searchedPlayer, searchQuery, setQuery } = useSearchPlayer(players, query);
   const { filteredPlayers } = usePositionFilter(searchedPlayer, positionIdx);
 
   return (
     <Portal>
-      <Dimmed />
-      <div className={`fixed inset-0 z-50 flex items-center justify-center`}>
-        <div className="bg-card border-card-border flex h-9/12 w-4/5 max-w-4xl flex-col rounded-xl border shadow-2xl">
+      <Dialog isOpen={isOpen} unMount={unMount} onClose={onClose}>
+        <div className="bg-card border-card-border w- flex h-[80vh] w-[80vw] flex-col rounded-xl border shadow-2xl">
           <div className="border-border flex items-center justify-between border-b p-4">
             <div>
               <h2 className="text-foreground text-2xl font-bold">선수 선택</h2>
@@ -33,8 +43,7 @@ export function AddPlayerModal({ players, positionIdx, onSelectPlayer, onClose }
               <X className="h-6 w-6" />
             </button>
           </div>
-
-          <div className={'p-4'}>
+          <div className={'px-4 py-2'}>
             <SearchBar
               className="text-muted-foreground focus-within:text-foreground border-border"
               value={searchQuery}
@@ -42,7 +51,7 @@ export function AddPlayerModal({ players, positionIdx, onSelectPlayer, onClose }
               placeholder="선수 이름 또는 게임 닉네임 검색..."
             />
           </div>
-          <div className="flex-1 overflow-y-auto px-4">
+          <div className="flex-1 overflow-y-auto p-4">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <SwitchCase
                 value={filteredPlayers.length}
@@ -53,18 +62,22 @@ export function AddPlayerModal({ players, positionIdx, onSelectPlayer, onClose }
                     </div>
                   ),
                 }}
-                defaultComponent={() =>
-                  filteredPlayers.map(player => (
-                    <div key={player.memberIdx} onClick={() => onSelectPlayer(player)}>
-                      <PlayerCard player={player} />
-                    </div>
-                  ))
-                }
+                defaultComponent={() => (
+                  <SeeMoreList data={filteredPlayers} isInfiniteScroll>
+                    {items =>
+                      items.map(player => (
+                        <div key={player.memberIdx} onClick={() => onSelectPlayer(player)}>
+                          <PlayerCard player={player} />
+                        </div>
+                      ))
+                    }
+                  </SeeMoreList>
+                )}
               />
             </div>
           </div>
         </div>
-      </div>
+      </Dialog>
     </Portal>
   );
 }

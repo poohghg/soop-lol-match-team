@@ -23,4 +23,4 @@ export {
 
 export type { BaseTab } from './components';
 
-export { Spacing, Button, RadioGroup, RadioGroupItem, Label } from './ui';
+export { Spacing, Button, RadioGroup, RadioGroupItem, Label, Dialog } from './ui';

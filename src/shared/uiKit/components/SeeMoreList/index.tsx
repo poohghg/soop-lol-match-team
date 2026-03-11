@@ -6,7 +6,7 @@ import { ReactNode, useMemo, useState } from 'react';
 
 interface SeeMoreListProps<T> {
   data: T[];
-  children: (item: T[]) => ReactNode;
+  children: (items: T[]) => ReactNode;
   pageSize?: number;
   isInfiniteScroll?: boolean;
 }

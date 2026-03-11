@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { OverlayProvider } from 'overlay-kit';
 import { ReactNode } from 'react';
 
 const geistSans = Geist({
@@ -42,10 +43,12 @@ const RootComponent = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <ReactQueryProvider>
       <RootDimmed>
-        <ClientRoot>
-          <div className={'relative isolate z-0 mx-auto flex max-w-[1200px] flex-col'}>{children}</div>
-          <ToastList />
-        </ClientRoot>
+        <OverlayProvider>
+          <ClientRoot>
+            <div className={'relative isolate z-0 mx-auto flex max-w-[1200px] flex-col'}>{children}</div>
+            <ToastList />
+          </ClientRoot>
+        </OverlayProvider>
       </RootDimmed>
     </ReactQueryProvider>
   );

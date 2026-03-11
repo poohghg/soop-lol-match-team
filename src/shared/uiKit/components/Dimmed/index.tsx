@@ -65,10 +65,7 @@ export const RootDimmed = memo(({ children }: { children: React.ReactNode }) => 
       {children}
       {showDimmed && (
         <Portal>
-          <div
-            className="fixed inset-0 z-10 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
-            onClick={handleDimmedClick}
-          />
+          <div className="fixed inset-0 z-10 bg-black/70 p-4 backdrop-blur-sm" onClick={handleDimmedClick} />
         </Portal>
       )}
     </DimmedProvider>
