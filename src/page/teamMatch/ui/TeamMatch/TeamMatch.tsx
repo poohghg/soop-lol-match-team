@@ -1,34 +1,12 @@
 'use client';
 
-import { Player, PlayerView } from '@/src/entities/player';
-import { Position, PositionIdx } from '@/src/entities/player/model/type';
+import { Player } from '@/src/entities/player';
+import { PositionIdx } from '@/src/entities/player/model/type';
+import { useTeam } from '@/src/page/teamMatch/lib/useTeam';
 import { AddPlayerModal } from '@/src/page/teamMatch/ui/TeamMatch/AddPlayerModal';
+import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeanSlot';
 import { Plus, X } from 'lucide-react';
 import { useState } from 'react';
-
-interface TeamSlot {
-  position: Position;
-  positionIdx: PositionIdx;
-  player: Player | null;
-}
-
-interface Team {
-  title: string;
-  slots: TeamSlot[];
-}
-
-const initSlots: TeamSlot[] = [
-  { position: '탑', positionIdx: '1', player: null },
-  { position: '정글', positionIdx: '2', player: null },
-  { position: '미드', positionIdx: '3', player: null },
-  { position: '원딜', positionIdx: '4', player: null },
-  { position: '서폿', positionIdx: '5', player: null },
-];
-
-const initialTeam: Team = {
-  title: '',
-  slots: [...initSlots],
-};
 
 interface TeamMatchSectionProps {
   players: Player[];
@@ -36,25 +14,15 @@ interface TeamMatchSectionProps {
 
 export function TeamMatch({ players }: TeamMatchSectionProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [teams, setTeams] = useState<Team[]>([{ ...initialTeam }]);
+  const {
+    teams,
+    setTeams,
+    addTeam: handleAddTeam,
+    removeTeam: handleRemoveTeam,
+    changeTeamTitle: handleTeamTitleChange,
+  } = useTeam();
   const [selectedTeamIndex, setSelectedTeamIndex] = useState<number | null>(null);
   const [selectedPosition, setSelectedPosition] = useState<PositionIdx | null>(null);
-
-  const handleAddTeam = () => {
-    setTeams([...teams, { ...initialTeam }]);
-  };
-
-  const handleRemoveTeam = (teamIndex: number) => {
-    if (teams.length > 1) {
-      setTeams(teams.filter((_, index) => index !== teamIndex));
-    }
-  };
-
-  const handleTeamTitleChange = (teamIndex: number, newTitle: string) => {
-    const newTeams = [...teams];
-    newTeams[teamIndex].title = newTitle;
-    setTeams(newTeams);
-  };
 
   const handleOpenModal = (teamIndex: number, positionIdx: PositionIdx) => {
     setSelectedTeamIndex(teamIndex);
@@ -132,49 +100,15 @@ export function TeamMatch({ players }: TeamMatchSectionProps) {
               )}
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
-              {team.slots.map(slot => {
-                const colors = PlayerView.getPositionClasses(slot.positionIdx);
-                return (
-                  <div
-                    key={slot.positionIdx}
-                    className={`relative flex flex-col gap-1 border-2 ${colors.border} bg-card hover:bg-muted rounded-lg p-2 transition-all`}
-                  >
-                    <div className="text-foreground text-[14px] font-semibold">{slot.position}</div>
-                    {slot.player ? (
-                      <div>
-                        <div className="flex items-start justify-between">
-                          <div className="min-w-0 flex-1">
-                            <p className="text-foreground truncate text-sm font-semibold">{slot.player.userNick}</p>
-                            <p className="text-muted-foreground truncate text-xs">{slot.player.gameNick}</p>
-                          </div>
-                          <button
-                            onClick={() => handleRemovePlayer(teamIndex, slot.positionIdx)}
-                            className="text-muted-foreground ml-2 transition-colors hover:text-red-500"
-                          >
-                            <X className="h-4 w-4" />
-                          </button>
-                        </div>
-                        <div className="flex items-center justify-between text-xs">
-                          <span className={`${colors.text} font-semibold`}>{slot.player.highTier}</span>
-                          <span className="text-position-adc font-semibold">{slot.player.bjmatchPoint}P</span>
-                        </div>
-                        {slot.player.broading === 'Y' && (
-                          <span className="inline-block rounded bg-red-500/20 px-2 py-0.5 text-xs text-red-500">
-                            방송중
-                          </span>
-                        )}
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => handleOpenModal(teamIndex, slot.positionIdx)}
-                        className="border-border hover:border-muted-foreground text-muted-foreground hover:text-foreground w-full rounded-lg border-2 border-dashed py-2 text-sm text-xs transition-all"
-                      >
-                        + 선수 추가
-                      </button>
-                    )}
-                  </div>
-                );
-              })}
+              {team.slots.map(slot => (
+                <TeamSlotCard
+                  key={slot.positionIdx}
+                  slot={slot}
+                  teamIndex={teamIndex}
+                  handleOpenModal={handleOpenModal}
+                  handleRemovePlayer={handleRemovePlayer}
+                />
+              ))}
             </div>
           </div>
         ))}

@@ -1,62 +1,18 @@
-import { Player } from '@/src/entities/player';
-import { LazyFavoritePlayerButton } from '@/src/features/player/ui/FavoritePlayerButton';
+'use client';
+
+import { Player, PlayerView } from '@/src/entities/player';
+import { LazyFavoritePlayerButton } from '@/src/features/player';
 import { copyToClipboard } from '@/src/shared/lib/utils';
-import { SeeMoreList, toasts } from '@/src/shared/uiKit';
+import { toasts } from '@/src/shared/uiKit';
 import { ToolTip } from '@/src/shared/uiKit/ui/Tooltop/Tooltop';
-import { CircleHelp, Heart, Radio, Shield, Sparkles, Sword, Target } from 'lucide-react';
+import { CircleHelp, Radio } from 'lucide-react';
 import Link from 'next/link';
-import { memo } from 'react';
+import { useMemo } from 'react';
 
-const positionIcons = {
-  '1': Shield,
-  '2': Sword,
-  '3': Sparkles,
-  '4': Target,
-  '5': Heart,
-};
-
-const positionClasses = {
-  '1': {
-    bg: 'bg-position-top',
-    text: 'text-position-top',
-    bgLight: 'bg-position-top/20',
-  },
-  '2': {
-    bg: 'bg-position-jungle',
-    text: 'text-position-jungle',
-    bgLight: 'bg-position-jungle/20',
-  },
-  '3': {
-    bg: 'bg-position-mid',
-    text: 'text-position-mid',
-    bgLight: 'bg-position-mid/20',
-  },
-  '4': {
-    bg: 'bg-position-adc',
-    text: 'text-position-adc',
-    bgLight: 'bg-position-adc/20',
-  },
-  '5': {
-    bg: 'bg-position-support',
-    text: 'text-position-support',
-    bgLight: 'bg-position-support/20',
-  },
-};
-
-const getCalcColorClass = (calc: number) => {
-  if (calc < 0) {
-    return 'text-blue-500';
-  }
-  if (calc > 0) {
-    return 'text-red-500';
-  }
-  return 'text-muted-foreground';
-};
-
-const PlayerListRow = ({ player }: { player: Player }) => {
-  const Icon = positionIcons[player.positionIdx as keyof typeof positionIcons];
-  const colors = positionClasses[player.positionIdx as keyof typeof positionClasses];
-  const calcColor = getCalcColorClass(player.totalCalc);
+export const PlayerCard = ({ player }: { player: Player }) => {
+  const PositionIcon = useMemo(() => PlayerView.getPositionIcon(player.positionIdx), [player.positionIdx]);
+  const colors = PlayerView.getPositionClasses(player.positionIdx);
+  const calcColor = PlayerView.getCalcPointClass(player.totalCalc);
 
   const handleCopyClick = async () => {
     const isSuccess = await copyToClipboard(player.userNick);
@@ -66,10 +22,7 @@ const PlayerListRow = ({ player }: { player: Player }) => {
   };
 
   return (
-    <div
-      key={player.memberIdx}
-      className="bg-muted border-border hover:border-primary/50 rounded-lg border p-4 transition-all"
-    >
+    <div className="bg-muted border-border hover:border-primary/50 rounded-lg border p-4 transition-all">
       <div className="mb-3 flex items-start justify-between">
         <div className="flex items-center gap-2">
           <ToolTip
@@ -82,7 +35,8 @@ const PlayerListRow = ({ player }: { player: Player }) => {
               </div>
             }
           >
-            <Icon className="h-4 w-4" />
+            {/* eslint-disable-next-line react-hooks/static-components */}
+            <PositionIcon className="h-4 w-4" />
           </ToolTip>
           <div className="min-w-0 flex-1">
             <h3 role={'button'} className="text-foreground truncate font-semibold" onClick={handleCopyClick}>
@@ -111,12 +65,12 @@ const PlayerListRow = ({ player }: { player: Player }) => {
                     }
                   >
                     {player.matchCntCalc !== 0 && (
-                      <span className={`text-xs ${getCalcColorClass(player.matchCntCalc)}`}>
+                      <span className={`text-xs ${PlayerView.getCalcPointClass(player.matchCntCalc)}`}>
                         판수 : {player.matchCntCalc}P ({player.matchCntCalcType === 'penalty' ? '감점' : '가점'})
                       </span>
                     )}
                     {player.tierCalc !== 0 && (
-                      <span className={getCalcColorClass(player.tierCalc)}>
+                      <span className={PlayerView.getCalcPointClass(player.tierCalc)}>
                         티어 : {player.tierCalc}P ({player.tierCalcType === 'penalty' ? '감점' : '가점'})
                       </span>
                     )}
@@ -157,26 +111,3 @@ const PlayerListRow = ({ player }: { player: Player }) => {
     </div>
   );
 };
-
-interface PlayerListProps {
-  players: Player[];
-  queryKey?: string;
-}
-
-export const PlayerList = memo(({ players, queryKey }: PlayerListProps) => {
-  if (players.length === 0) {
-    return (
-      <div className="text-muted-foreground col-span-full py-12 text-center">
-        <p className="text-lg font-medium">등록된 플레이어가 없습니다.</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <SeeMoreList key={queryKey} data={players} pageSize={30} isInfiniteScroll>
-        {currentPlayers => currentPlayers.map(player => <PlayerListRow key={player.memberIdx} player={player} />)}
-      </SeeMoreList>
-    </div>
-  );
-});

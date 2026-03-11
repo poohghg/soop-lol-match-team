@@ -2,7 +2,7 @@
 
 import { Player } from '@/src/entities/player';
 import { FavoritesPlayers, usePositionFilter, useSearchPlayer } from '@/src/features/player';
-import { PlayerList } from '@/src/page/teamMatch/ui/PlayerList';
+import { PlayerList } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
 import { PlayTabsList } from '@/src/page/teamMatch/ui/PlayerTab/PlayTabsList';
 import { PositionFilter } from '@/src/page/teamMatch/ui/PlayerTab/PositionFilter';
 import { SearchBar, Spacing, Tabs, TabsPanel } from '@/src/shared/uiKit';

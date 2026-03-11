@@ -66,7 +66,7 @@ const ToastList = () => {
   }
 
   return (
-    <div className={'fixed top-5 right-1/2 z-50 flex translate-x-1/2 transform flex-col gap-2'}>
+    <div className={'fixed top-5 right-1/2 z-100 flex translate-x-1/2 transform flex-col gap-2'}>
       {toasts.map(toast => (
         <ToastItem key={toast.id} {...toast} />
       ))}

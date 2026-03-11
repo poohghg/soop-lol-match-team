@@ -1,3 +1,5 @@
+'use client';
+
 import { Player } from '@/src/entities/player';
 import { PositionIdxWithAll } from '@/src/entities/player/model/type';
 import { useMemo, useState } from 'react';

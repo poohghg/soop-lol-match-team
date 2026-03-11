@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 export const useOverflowHidden = (isOverflowHidden: boolean) => {
-  const originalOverflow = useRef(document.body.style.overflow);
+  const originalOverflow = useRef('');
+
+  useEffect(() => {
+    originalOverflow.current = document.body.style.overflow;
+  }, []);
 
   useEffect(() => {
     const originalOverflowValue = originalOverflow.current;

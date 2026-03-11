@@ -70,4 +70,14 @@ export class PlayerView {
   static getPositionClasses(positionIdx: PositionIdx) {
     return PlayerView.positionClasses[positionIdx];
   }
+
+  static getCalcPointClass(calc: number) {
+    if (calc < 0) {
+      return 'text-blue-500';
+    }
+    if (calc > 0) {
+      return 'text-red-500';
+    }
+    return 'text-muted-foreground';
+  }
 }
