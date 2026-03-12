@@ -1,7 +1,7 @@
 'use client';
 
 import { Player } from '@/src/entities/player';
-import { useUserStore } from '@/src/features/player';
+import { useTeamStore } from '@/src/features/player';
 import { AddPlayerModal } from '@/src/page/teamMatch/ui/TeamMatch/AddPlayerModal';
 import { TeamCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamCard';
 import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamSlotCard';
@@ -13,7 +13,7 @@ interface TeamMatchSectionProps {
 }
 
 export function TeamMatch({ players }: TeamMatchSectionProps) {
-  const { teams, addTeam, removeTeam, changeTeamTitle, addPlayerToTeam, removePlayerFromTeam } = useUserStore();
+  const { teams, addTeam, removeTeam, changeTeamTitle, addPlayerToTeam, removePlayerFromTeam } = useTeamStore();
 
   return (
     <section className="mb-12">

@@ -45,20 +45,19 @@ export const ActiveFilter = () => {
             const { offsetLeft, offsetWidth } = selectedButton;
             el.style.transform = `translateX(${offsetLeft}px)`;
             el.style.width = `${offsetWidth}px`;
+            if (!isMounted) {
+              setIsMounted(true);
+            }
           }
         }
       }}
       id={'active-filter-indicator'}
-      className={`pointer-events-none absolute top-0 left-0 m-[2px] rounded-[6px] bg-white shadow-[0_2px_4px_rgba(0,0,0,0.1)] transition-all ease-out ${
-        isMounted ? 'duration-200' : 'opacity-0'
-      }`}
+      className={cn(
+        `pointer-events-none absolute top-0 left-0 m-[2px] rounded-[6px] bg-white shadow-[0_2px_4px_rgba(0,0,0,0.1)] duration-200 ease-out`,
+        isMounted ? 'transition-all' : 'transition-none'
+      )}
       style={{
         height: 'calc(100% - 4px)',
-      }}
-      onTransitionEnd={() => {
-        if (!isMounted) {
-          setIsMounted(true);
-        }
       }}
     />
   );

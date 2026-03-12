@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: implement dimmed overlay and portal for improved modal experience">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/teamStore.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamCard.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/index.ts" afterDir="false" />
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: refactor team management with new dialog component and player selection">
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerListContainer.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchPlayer.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useSearchPlayer.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/favoritePlayerStore.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/favoritePlayerStore.ts" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/type.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/type.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/teamStore.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/model/teamStore.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerTab.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab/PlayerTab.tsx" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamMatch.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamMatch.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeanSlot.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamSlotCard.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Dimmed/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Dimmed/index.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Portal/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Portal/index.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SeeMoreList/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/SeeMoreList/index.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/index.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +137,8 @@
       <workItem from="1773123037255" duration="12913000" />
       <workItem from="1773212133750" duration="5828000" />
       <workItem from="1773217983024" duration="4508000" />
-      <workItem from="1773222531816" duration="787000" />
+      <workItem from="1773222531816" duration="2600000" />
+      <workItem from="1773298720031" duration="4581000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -234,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773212144891</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: refactor team management with new dialog component and player selection">
+      <option name="closed" value="true" />
+      <created>1773223438926</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773223438926</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +263,7 @@
     <MESSAGE value="feat: add team fetching functionality and implement caching for team data" />
     <MESSAGE value="feat: enhance player management with new favorites functionality and position count tracking" />
     <MESSAGE value="feat: implement dimmed overlay and portal for improved modal experience" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement dimmed overlay and portal for improved modal experience" />
+    <MESSAGE value="feat: refactor team management with new dialog component and player selection" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor team management with new dialog component and player selection" />
   </component>
 </project>

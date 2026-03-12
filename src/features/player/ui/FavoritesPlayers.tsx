@@ -1,3 +1,5 @@
+'use client';
+
 import { Player } from '@/src/entities/player';
 import { useFavoritesPlayer } from '@/src/features/player/lib/useFavoritesCoins';
 import React from 'react';

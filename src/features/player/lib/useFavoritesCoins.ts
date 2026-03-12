@@ -1,3 +1,4 @@
+'use client';
 import { Player } from '@/src/entities/player';
 import { useFavoritePlayerStore } from '@/src/features/player/model/favoritePlayerStore';
 

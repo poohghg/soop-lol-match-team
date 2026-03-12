@@ -26,7 +26,7 @@ export interface TeamStoreState {
 
 const TEAM_STORAGE_KEY = 'team-store';
 
-export const useUserStore = create<TeamStoreState>()(
+export const useTeamStore = create<TeamStoreState>()(
   persist(
     (set, get) => ({
       teams: [createEmptyTeam()],
