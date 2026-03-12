@@ -5,6 +5,7 @@
     --animate-out: out 0.15s ease-in forwards;
     --animate-fade-in: fade-in 0.3s ease-out forwards;
     --animate-fade-out: fade-out 0.3s ease-in forwards;
+    --animate-shimmer: shimmer 0.5s linear infinite;
 
     @keyframes highlight-up {
         0% {
@@ -57,6 +58,14 @@
         }
         to {
             opacity: 0;
+        }
+    }
+    @keyframes shimmer {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(100%);
         }
     }
 }

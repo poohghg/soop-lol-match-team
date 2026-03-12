@@ -1,6 +1,7 @@
 import { PlayerTab } from '@/src/page/teamMatch/ui/PlayerTab/PlayerTab';
 import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch/TeamMatch';
 import { teamMatchService } from '@/src/page/teamMatch/usecase/TeamMatchService';
+import { Spacing } from '@/src/shared/uiKit';
 
 async function TeamMatchPage() {
   const { players, positionCountMap } = await teamMatchService.getPlayers();
@@ -22,8 +23,15 @@ async function TeamMatchPage() {
           {/*  {isDark ? <Sun className="text-foreground h-5 w-5" /> : <Moon className="text-foreground h-5 w-5" />}*/}
           {/*</button>*/}
         </header>
-        <TeamMatch players={players} />
-        <PlayerTab players={players} positionCountMap={positionCountMap} />
+        <div className={`flex max-[800px]:flex-col`}>
+          <div className={`min-[800px]:min-w-[600px]`}>
+            <TeamMatch players={players} />
+          </div>
+          <Spacing size={16} width={16} />
+          <div className={`flex-1`}>
+            <PlayerTab players={players} positionCountMap={positionCountMap} />
+          </div>
+        </div>
       </div>
     </div>
   );

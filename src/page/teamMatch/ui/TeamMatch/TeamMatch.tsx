@@ -2,8 +2,9 @@
 
 import { Player } from '@/src/entities/player';
 import { useTeamStore } from '@/src/features/player';
+import { SectionCard } from '@/src/page/teamMatch/ui/SectionCard';
 import { AddPlayerModal } from '@/src/page/teamMatch/ui/TeamMatch/AddPlayerModal';
-import { TeamCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamCard';
+import { LazyTeamCard, TeamCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamCard';
 import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamSlotCard';
 import { Plus } from 'lucide-react';
 import { overlay } from 'overlay-kit';
@@ -16,19 +17,22 @@ export function TeamMatch({ players }: TeamMatchSectionProps) {
   const { teams, addTeam, removeTeam, changeTeamTitle, addPlayerToTeam, removePlayerFromTeam } = useTeamStore();
 
   return (
-    <section className="mb-12">
-      <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-foreground text-2xl font-bold">팀 매칭</h2>
-        <button
-          onClick={addTeam}
-          className="from-primary flex transform items-center gap-2 rounded-lg bg-gradient-to-r to-purple-600 px-4 py-2 text-white transition-all hover:scale-105 hover:opacity-90"
-        >
-          <Plus className="h-4 w-4" />새 팀 추가
-        </button>
-      </div>
-      <div className="space-y-6">
+    <SectionCard
+      header={
+        <div className="flex items-center justify-between">
+          <h2 className="text-foreground text-2xl font-bold">팀 매칭</h2>
+          <button
+            onClick={addTeam}
+            className="from-primary flex transform items-center gap-2 rounded-lg bg-gradient-to-r to-purple-600 px-4 py-2 text-white transition-all hover:scale-105 hover:opacity-90"
+          >
+            <Plus className="h-4 w-4" />새 팀 추가
+          </button>
+        </div>
+      }
+    >
+      <div className={`flex flex-col gap-6`}>
         {teams.map((team, teamIndex) => (
-          <TeamCard
+          <LazyTeamCard
             key={teamIndex}
             teamIndex={teamIndex}
             team={team}
@@ -62,6 +66,6 @@ export function TeamMatch({ players }: TeamMatchSectionProps) {
           />
         ))}
       </div>
-    </section>
+    </SectionCard>
   );
 }

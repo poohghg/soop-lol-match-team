@@ -74,7 +74,11 @@ export const FilterButton = ({ children, value, ...props }: MergeElementProps<'b
 
   return (
     <button
-      className={`z-1 flex flex-1 items-center justify-center rounded-[6px] p-0 text-[13px] font-bold transition-all duration-100 select-none ${isSelected ? 'text-blue-600' : 'text-gray-500 hover:bg-gray-200/50 hover:text-gray-700'} ${className} `}
+      className={cn(
+        `relative z-10 flex h-full flex-1 items-center justify-center rounded-[6px] p-0 text-[13px] font-bold transition-all duration-100 select-none`,
+        isSelected ? 'text-blue-600' : 'text-gray-500 hover:bg-gray-200/50 hover:text-gray-700',
+        className
+      )}
       onClick={handleClick}
       value={value}
       {...restProps}

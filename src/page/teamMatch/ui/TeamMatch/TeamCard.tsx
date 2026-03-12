@@ -1,6 +1,7 @@
 import { Team, TeamSlot } from '@/src/features/player';
 import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamSlotCard';
 import { X } from 'lucide-react';
+import dynamic from 'next/dynamic';
 
 interface TeamCardProps {
   teamIndex: number;
@@ -39,8 +40,21 @@ export const TeamCard = ({
           </button>
         )}
       </div>
-      <div>총점 : {team.slots.reduce((total, slot) => total + (slot.player ? slot.player.bjmatchPoint : 0), 0)}P</div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-5">{team.slots.map(slot => teamSlot(slot, teamIndex))}</div>
+      <div className={`text-foreground text-sm font-medium`}>
+        총점 : {team.slots.reduce((total, slot) => total + (slot.player ? slot.player.bjmatchPoint : 0), 0)}P
+      </div>
+      <div className="grid grid-cols-5 gap-4 max-[430px]:grid-cols-1">
+        {team.slots.map(slot => teamSlot(slot, teamIndex))}
+      </div>
     </div>
   );
 };
+
+export const LazyTeamCard = dynamic(() => Promise.resolve(TeamCard), {
+  ssr: false,
+  loading: () => (
+    <div className="relative h-[200px] w-full overflow-hidden rounded-xl bg-gray-200">
+      <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+    </div>
+  ),
+});
