@@ -9,7 +9,6 @@ import { Spacing, Tabs, TabsPanel } from '@/src/shared/uiKit';
 
 interface PlayerTabProps {
   players: Player[];
-  positionCountMap: Record<string, number>;
 }
 
 export const PlayerTab = ({ players }: PlayerTabProps) => {

@@ -1,5 +1,7 @@
 import { Team, TeamSlot } from '@/src/features/player';
-import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamSlotCard';
+import { cn } from '@/src/shared/uiKit';
+import { useDroppable } from '@dnd-kit/core';
+
 import { X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -20,8 +22,21 @@ export const TeamCard = ({
   onRemoveTeam,
   teamSlot,
 }: TeamCardProps) => {
+  const { isOver, setNodeRef } = useDroppable({
+    id: `slot-${teamIndex}`,
+    data: {
+      teamIndex,
+    },
+  });
+
   return (
-    <div className="bg-card border-card-border relative flex flex-col gap-4 rounded-xl border p-2 shadow-sm backdrop-blur-sm">
+    <div
+      ref={setNodeRef}
+      className={cn(
+        'bg-card border-card-border relative flex flex-col gap-4 rounded-xl border p-2 shadow-sm backdrop-blur-sm',
+        isOver && 'border-primary'
+      )}
+    >
       <div className="flex items-center justify-between">
         <input
           className="w-full bg-transparent text-lg font-semibold text-gray-500 focus:outline-none"

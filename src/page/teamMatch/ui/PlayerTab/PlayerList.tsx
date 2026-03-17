@@ -1,6 +1,20 @@
 import { Player, PlayerCard } from '@/src/entities/player';
-import { SeeMoreList } from '@/src/shared/uiKit';
+import { cn, SeeMoreList } from '@/src/shared/uiKit';
+import { useDraggable } from '@dnd-kit/core';
 import { memo } from 'react';
+
+export const DraggablePlayerCard = ({ player, isOverlay }: { player: Player; isOverlay?: boolean }) => {
+  const { listeners, setNodeRef, isDragging } = useDraggable({
+    id: player.userNick,
+    data: player,
+  });
+
+  return (
+    <div className={cn(isDragging && 'opacity-50', isOverlay && `scale-75 opacity-75`)} ref={setNodeRef} {...listeners}>
+      <PlayerCard player={player} />
+    </div>
+  );
+};
 
 interface PlayerListProps {
   players: Player[];
@@ -19,7 +33,7 @@ export const PlayerList = memo(({ players, queryKey }: PlayerListProps) => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       <SeeMoreList key={queryKey} data={players} pageSize={30} isInfiniteScroll>
-        {currentPlayers => currentPlayers.map(player => <PlayerCard key={player.memberIdx} player={player} />)}
+        {currentPlayers => currentPlayers.map(player => <DraggablePlayerCard key={player.userId} player={player} />)}
       </SeeMoreList>
     </div>
   );

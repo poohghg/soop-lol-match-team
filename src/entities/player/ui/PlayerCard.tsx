@@ -3,12 +3,12 @@
 import { Player, PlayerView } from '@/src/entities/player';
 import { LazyFavoritePlayerButton } from '@/src/features/player';
 import { copyToClipboard } from '@/src/shared/lib/utils';
-import { toasts, ToolTip } from '@/src/shared/uiKit';
+import { cn, toasts, ToolTip } from '@/src/shared/uiKit';
 import { CircleHelp, Radio } from 'lucide-react';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
-export const PlayerCard = ({ player }: { player: Player }) => {
+export const PlayerCard = memo(({ player }: { player: Player }) => {
   const PositionIcon = useMemo(() => PlayerView.getPositionIcon(player.positionIdx), [player.positionIdx]);
   const colors = PlayerView.getPositionClasses(player.positionIdx);
   const calcColor = PlayerView.getCalcPointClass(player.totalCalc);
@@ -21,7 +21,10 @@ export const PlayerCard = ({ player }: { player: Player }) => {
   };
 
   return (
-    <div className="bg-muted border-border hover:border-primary/50 rounded-lg border p-2 transition-all">
+    <div
+      className={cn(`bg-muted border-border hover:border-primary/50 rounded-lg border p-2 transition-all`)}
+      // style={style}
+    >
       <div className="mb-3 flex items-start justify-between">
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <ToolTip
@@ -109,4 +112,4 @@ export const PlayerCard = ({ player }: { player: Player }) => {
       </div>
     </div>
   );
-};
+});

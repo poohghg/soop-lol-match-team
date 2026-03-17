@@ -4,7 +4,7 @@ import { Player } from '@/src/entities/player';
 import { useTeamStore } from '@/src/features/player';
 import { SectionCard } from '@/src/page/teamMatch/ui/SectionCard';
 import { AddPlayerModal } from '@/src/page/teamMatch/ui/TeamMatch/AddPlayerModal';
-import { LazyTeamCard, TeamCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamCard';
+import { LazyTeamCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamCard';
 import { TeamSlotCard } from '@/src/page/teamMatch/ui/TeamMatch/TeamSlotCard';
 import { Plus } from 'lucide-react';
 import { overlay } from 'overlay-kit';
@@ -13,7 +13,7 @@ interface TeamMatchSectionProps {
   players: Player[];
 }
 
-export function TeamMatch({ players }: TeamMatchSectionProps) {
+export const TeamMatch = ({ players }: TeamMatchSectionProps) => {
   const { teams, addTeam, removeTeam, changeTeamTitle, addPlayerToTeam, removePlayerFromTeam } = useTeamStore();
 
   return (
@@ -30,7 +30,7 @@ export function TeamMatch({ players }: TeamMatchSectionProps) {
         </div>
       }
     >
-      <div className={`flex flex-col gap-6`}>
+      <div className={`flex flex-col gap-6 pb-4`}>
         {teams.map((team, teamIndex) => (
           <LazyTeamCard
             key={teamIndex}
@@ -68,4 +68,4 @@ export function TeamMatch({ players }: TeamMatchSectionProps) {
       </div>
     </SectionCard>
   );
-}
+};
