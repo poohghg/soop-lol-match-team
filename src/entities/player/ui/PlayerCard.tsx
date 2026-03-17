@@ -3,8 +3,7 @@
 import { Player, PlayerView } from '@/src/entities/player';
 import { LazyFavoritePlayerButton } from '@/src/features/player';
 import { copyToClipboard } from '@/src/shared/lib/utils';
-import { toasts } from '@/src/shared/uiKit';
-import { ToolTip } from '@/src/shared/uiKit/ui/Tooltop/Tooltop';
+import { toasts, ToolTip } from '@/src/shared/uiKit';
 import { CircleHelp, Radio } from 'lucide-react';
 import Link from 'next/link';
 import { useMemo } from 'react';
@@ -22,9 +21,9 @@ export const PlayerCard = ({ player }: { player: Player }) => {
   };
 
   return (
-    <div className="bg-muted border-border hover:border-primary/50 rounded-lg border p-4 transition-all">
+    <div className="bg-muted border-border hover:border-primary/50 rounded-lg border p-2 transition-all">
       <div className="mb-3 flex items-start justify-between">
-        <div className="flex items-center gap-2">
+        <div className="flex min-w-0 flex-1 items-center gap-2">
           <ToolTip
             className={`rounded-lg p-2 ${colors.bgLight} ${colors.text}`}
             text={
@@ -38,14 +37,14 @@ export const PlayerCard = ({ player }: { player: Player }) => {
             {/* eslint-disable-next-line react-hooks/static-components */}
             <PositionIcon className="h-4 w-4" />
           </ToolTip>
-          <div className="min-w-0 flex-1">
+          <div className="min-w-0">
             <h3 role={'button'} className="text-foreground truncate font-semibold" onClick={handleCopyClick}>
               {player.userNick}
             </h3>
             <p className="text-muted-foreground truncate text-xs">{player.gameNick}</p>
           </div>
         </div>
-        <LazyFavoritePlayerButton playerId={player.userNick} />
+        <LazyFavoritePlayerButton className={`flex-shrink-0`} playerId={player.userNick} />
       </div>
       <div className="space-y-2">
         <div className="flex items-center justify-between">

@@ -36,9 +36,9 @@ export const TeamSlotCard = ({ slot, teamIndex, onOpenModal, onRemovePlayer }: T
       </div>
       {slot.player ? (
         <div className={`bg-muted flex flex-col gap-1`}>
-          <p className="text-foreground truncate text-xs font-semibold">{slot.player.userNick}</p>
-          <p className="text-muted-foreground truncate text-xs">{slot.player.highTier}</p>
-          <p className="text-muted-foreground truncate text-xs">{slot.player.bjmatchPoint}P</p>
+          <p className="text-foreground truncate text-[11px] font-semibold">{slot.player.userNick}</p>
+          <p className="text-muted-foreground truncate text-[11px]">{slot.player.highTier}</p>
+          <p className="text-muted-foreground truncate text-[11px]">{slot.player.bjmatchPoint}P</p>
         </div>
       ) : (
         <div className={`flex flex-1 items-center justify-center`}>

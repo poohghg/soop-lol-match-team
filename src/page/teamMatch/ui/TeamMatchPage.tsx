@@ -24,7 +24,7 @@ async function TeamMatchPage() {
           {/*</button>*/}
         </header>
         <div className={`flex max-[800px]:flex-col`}>
-          <div className={`min-[800px]:min-w-[600px]`}>
+          <div className={`min-[800px]:w-[550px]`}>
             <TeamMatch players={players} />
           </div>
           <Spacing size={16} width={16} />

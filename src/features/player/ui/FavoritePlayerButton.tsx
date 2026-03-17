@@ -1,16 +1,20 @@
 'use client';
 
 import { useFavoritePlayerStore } from '@/src/features/player/model/favoritePlayerStore';
+import { MergeElementProps } from '@/src/shared/type/reactElement';
 import { cn, toasts } from '@/src/shared/uiKit';
 import { Star } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
 interface FavoriteCoinButtonProps {
   playerId: string;
-  starClassName?: string;
 }
 
-export const FavoritePlayerButton = ({ playerId, starClassName }: FavoriteCoinButtonProps) => {
+export const FavoritePlayerButton = ({
+  playerId,
+  className,
+  restProps,
+}: MergeElementProps<'button', FavoriteCoinButtonProps>) => {
   const toggleFavorite = useFavoritePlayerStore(state => state.toggleFavorite);
   const isFavorite = useFavoritePlayerStore(state => state.isFavorite);
   const _ = useFavoritePlayerStore(state => state.favoritePlayerIds);
@@ -27,10 +31,8 @@ export const FavoritePlayerButton = ({ playerId, starClassName }: FavoriteCoinBu
   return (
     <button
       onClick={handleToggleFavorite}
-      className={cn(
-        `${favorite ? 'text-yellow-400' : 'text-muted-foreground group-hover:text-foreground'}`,
-        starClassName
-      )}
+      className={cn(`${favorite ? 'text-yellow-400' : 'text-muted-foreground group-hover:text-foreground'}`, className)}
+      {...restProps}
     >
       <Star className="h-5 w-5" fill={favorite ? 'currentColor' : 'none'} />
     </button>
