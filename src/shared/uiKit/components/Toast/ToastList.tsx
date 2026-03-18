@@ -1,6 +1,6 @@
 'use client';
 
-import { useAutoClose, useTransitionState } from '@/src/shared/lib/hooks';
+import { useAutoClose, useTransitionState } from '@/src/shared/libs/hooks';
 import { cn, toasts } from '@/src/shared/uiKit';
 import { useToast } from '@/src/shared/uiKit/components/Toast/lib/useToast';
 import type { Toast, ToastType } from '@/src/shared/uiKit/components/Toast/model/type';

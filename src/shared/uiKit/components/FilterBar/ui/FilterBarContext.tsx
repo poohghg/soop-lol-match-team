@@ -1,4 +1,4 @@
-import { createReactContext } from '@/src/shared/lib/reactUtils';
+import { createReactContext } from '@/src/shared/libs/reactUtils';
 import { ReactNode, SetStateAction, useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
 
 interface FilterBarContext {

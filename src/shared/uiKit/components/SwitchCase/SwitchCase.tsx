@@ -1,6 +1,6 @@
 'use client';
 
-import { typedMemo } from '@/src/shared/lib/reactUtils';
+import { typedMemo } from '@/src/shared/libs/reactUtils';
 import { ReactNode } from 'react';
 
 type Case = Record<string | number, () => ReactNode>;

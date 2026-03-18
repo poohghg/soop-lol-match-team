@@ -1,8 +1,8 @@
 import { API_URL, IS_NODE, MOCK_API_URL, USE_MOCK } from '@/src/shared/constant';
-import { HEADER_CONTENT } from '@/src/shared/lib/api/constant/header';
-import { FetchErrorResponse, FetchFactory, ISuccessResponse } from '@/src/shared/lib/api/model/Response';
-import { HeaderContentKey, HttpMethod, Params } from '@/src/shared/lib/api/model/type';
-import { HttpErrorFactory } from '@/src/shared/lib/error/BaseError';
+import { HEADER_CONTENT } from '@/src/shared/libs/api/constant/header';
+import { FetchErrorResponse, FetchFactory, ISuccessResponse } from '@/src/shared/libs/api/model/Response';
+import { HeaderContentKey, HttpMethod, Params } from '@/src/shared/libs/api/model/type';
+import { HttpErrorFactory } from '@/src/shared/libs/error/BaseError';
 
 class Fetch {
   private readonly url: string;

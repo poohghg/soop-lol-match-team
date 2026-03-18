@@ -1,7 +1,7 @@
 import getMetadata from '@/src/app/head/metadata';
 import getViewPort from '@/src/app/head/viewport';
 import { ClientRoot } from '@/src/app/ui';
-import { ReactQueryProvider } from '@/src/shared/lib/reactQuery';
+import { ReactQueryProvider } from '@/src/shared/libs/reactQuery';
 import { RootDimmed, ToastList } from '@/src/shared/uiKit';
 import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';

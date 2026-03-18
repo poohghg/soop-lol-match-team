@@ -1,4 +1,4 @@
-import { HEADER_CONTENT } from '@/src/shared/lib/api/constant/header';
+import { HEADER_CONTENT } from '@/src/shared/libs/api/constant/header';
 
 export type HeaderContentKey = keyof typeof HEADER_CONTENT;
 

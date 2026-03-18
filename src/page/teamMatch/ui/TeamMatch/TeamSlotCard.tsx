@@ -1,7 +1,9 @@
 import { PlayerView } from '@/src/entities/player';
 import { PositionIdx } from '@/src/entities/player/model/type';
 import { TeamSlot } from '@/src/features/player';
+import { HighlightValue } from '@/src/shared/uiKit';
 import { X } from 'lucide-react';
+import { memo } from 'react';
 
 interface TeamSlotProps {
   slot: TeamSlot;
@@ -10,13 +12,15 @@ interface TeamSlotProps {
   onRemovePlayer: () => void;
 }
 
-export const TeamSlotCard = ({ slot, teamIndex, onOpenModal, onRemovePlayer }: TeamSlotProps) => {
+export const TeamSlotCard = memo(({ slot, teamIndex, onOpenModal, onRemovePlayer }: TeamSlotProps) => {
   const colors = PlayerView.getPositionClasses(slot.positionIdx);
 
   return (
-    <div
+    <HighlightValue
+      value={slot.player}
       key={slot.positionIdx}
-      className={`relative flex flex-col gap-1 border-2 ${colors.border} bg-card hover:bg-muted justify-between rounded-lg p-1.5 transition-all hover:scale-105`}
+      className={`relative flex flex-col gap-1 border-2 ${colors.border} bg-card hover:bg-muted h-[110px] justify-between rounded-lg p-1.5 transition-all hover:scale-105`}
+      animationClassName={`animate-border-flash`}
       onClick={() => onOpenModal(teamIndex, slot.positionIdx)}
       role={'button'}
     >
@@ -35,7 +39,7 @@ export const TeamSlotCard = ({ slot, teamIndex, onOpenModal, onRemovePlayer }: T
         )}
       </div>
       {slot.player ? (
-        <div className={`bg-muted flex flex-col gap-1`}>
+        <div className={`flex flex-col gap-1`}>
           <p className="text-foreground truncate text-[11px] font-semibold">{slot.player.userNick}</p>
           <p className="text-muted-foreground truncate text-[11px]">{slot.player.highTier}</p>
           <p className="text-muted-foreground truncate text-[11px]">{slot.player.bjmatchPoint}P</p>
@@ -47,6 +51,6 @@ export const TeamSlotCard = ({ slot, teamIndex, onOpenModal, onRemovePlayer }: T
           </div>
         </div>
       )}
-    </div>
+    </HighlightValue>
   );
-};
+});

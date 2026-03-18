@@ -1,5 +1,5 @@
-import { useControlledState, UseControlledStateProps } from '@/src/shared/lib/hooks';
-import { createReactContext } from '@/src/shared/lib/reactUtils';
+import { useControlledState, UseControlledStateProps } from '@/src/shared/libs/hooks';
+import { createReactContext } from '@/src/shared/libs/reactUtils';
 import { ReactNode, SetStateAction, useMemo } from 'react';
 
 interface TabsContext {

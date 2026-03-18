@@ -2,7 +2,7 @@
 
 import { Player, PlayerView } from '@/src/entities/player';
 import { LazyFavoritePlayerButton } from '@/src/features/player';
-import { copyToClipboard } from '@/src/shared/lib/utils';
+import { copyToClipboard } from '@/src/shared/libs/utils/jsUtils';
 import { cn, toasts, ToolTip } from '@/src/shared/uiKit';
 import { CircleHelp, Radio } from 'lucide-react';
 import Link from 'next/link';

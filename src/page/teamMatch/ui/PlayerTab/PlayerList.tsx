@@ -31,7 +31,7 @@ export const PlayerList = memo(({ players, queryKey }: PlayerListProps) => {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 @[400px]:grid-cols-2">
       <SeeMoreList key={queryKey} data={players} pageSize={30} isInfiniteScroll>
         {currentPlayers => currentPlayers.map(player => <DraggablePlayerCard key={player.userId} player={player} />)}
       </SeeMoreList>

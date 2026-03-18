@@ -56,7 +56,7 @@ export const TeamCard = ({
         )}
       </div>
       <div className={`text-foreground text-sm font-medium`}>
-        총점 : {team.slots.reduce((total, slot) => total + (slot.player ? slot.player.bjmatchPoint : 0), 0)}P
+        총점 : {team.slots.reduce((total, slot) => total + (slot.player ? slot.player.bjmatchPoint : 0), 0).toFixed(1)}P
       </div>
       <div className="grid grid-cols-5 gap-4 max-[430px]:grid-cols-1">
         {team.slots.map(slot => teamSlot(slot, teamIndex))}

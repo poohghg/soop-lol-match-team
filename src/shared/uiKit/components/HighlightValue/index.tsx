@@ -1,15 +1,21 @@
 'use client';
 
+import { MergeElementProps } from '@/src/shared/type/reactElement';
 import { ReactNode, useEffect, useRef } from 'react';
 
 interface HighlightProps<T> {
   value: T;
   children: ReactNode;
-  className: string;
   animationClassName: string;
 }
 
-export const HighlightValue = <T,>({ value, children, className, animationClassName }: HighlightProps<T>) => {
+export const HighlightValue = <T,>({
+  value,
+  children,
+  className,
+  animationClassName,
+  ...restProps
+}: MergeElementProps<'div', HighlightProps<T>>) => {
   const ref = useRef<HTMLDivElement>(null);
   const prevRef = useRef(value);
 
@@ -41,7 +47,7 @@ export const HighlightValue = <T,>({ value, children, className, animationClassN
   }, [value, animationClassName]);
 
   return (
-    <div ref={ref} className={`${className ?? ''}`}>
+    <div ref={ref} className={`${className ?? ''}`} {...restProps}>
       {children}
     </div>
   );

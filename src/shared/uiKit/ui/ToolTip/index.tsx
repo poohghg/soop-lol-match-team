@@ -1,6 +1,6 @@
 'use client';
 
-import { useVisible } from '@/src/shared/lib/hooks';
+import { useVisible } from '@/src/shared/libs/hooks';
 import { cn } from '@/src/shared/uiKit';
 import { ReactNode } from 'react';
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { useOverflowHidden } from '@/src/shared/lib/hooks';
-import { createReactContext } from '@/src/shared/lib/reactUtils';
+import { useOverflowHidden } from '@/src/shared/libs/hooks';
+import { createReactContext } from '@/src/shared/libs/reactUtils';
 import { Portal } from '@/src/shared/uiKit';
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

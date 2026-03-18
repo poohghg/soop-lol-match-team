@@ -1,4 +1,4 @@
-import { FetchBuilder, ISuccessResponse } from '@/src/shared/lib/api';
+import { FetchBuilder, ISuccessResponse } from '@/src/shared/libs/api';
 import { MatchPlayerDto, MatchPlayerSchema } from '../model/schema';
 
 export interface PlayerApi {

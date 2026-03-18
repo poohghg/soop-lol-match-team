@@ -6,6 +6,7 @@
     --animate-fade-in: fade-in 0.3s ease-out forwards;
     --animate-fade-out: fade-out 0.3s ease-in forwards;
     --animate-shimmer: shimmer 0.5s linear infinite;
+    --animate-border-flash: border-flash 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 
     @keyframes highlight-up {
         0% {
@@ -68,4 +69,18 @@
             transform: translateX(100%);
         }
     }
+    @keyframes border-flash {
+        0% {
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+        70% {
+            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0);
+        }
+    }
+
 }
+
+

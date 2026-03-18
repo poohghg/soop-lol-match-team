@@ -42,7 +42,7 @@
         --font-weight-normal: 400;
     }
 
-    .dark {
+    :root[data-theme='dark'] {
         /* Base colors */
         --background: 2 6 23; /* 다크 배경 */
         --foreground: 248 250 252; /* 밝은 텍스트 */
