@@ -7,3 +7,5 @@ export const MOCK_API_URL = process.env.MOCK_API_URL || ' http://localhost:3000'
 export const API_URL = process.env.API_URL || 'http://localhost:3000';
 
 export const SOCKET_URL = process.env.SOCKET_URL || 'ws://localhost:3000/socket';
+
+export const IS_PRODUCTION = process.env.NODE_ENV === 'production';

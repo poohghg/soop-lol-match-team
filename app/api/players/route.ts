@@ -8,14 +8,13 @@ const USE_CACHE = true;
 
 const getFileData = async (filePath: string) => {
   try {
-    const data = await fs.readFile(filePath, 'utf-8');
-    const json = JSON.parse(data);
-    if (json && 0 < json.faList.length) {
-      return json;
-    }
-    return null;
+    const res = await fetch('https://soop-lol-match-team.vercel.app/data/soop_cache.json', {
+      method: 'GET',
+    });
+    const json = await res.json();
+    return json;
   } catch (e) {
-    console.log(`캐시 파일을 읽는 중 오류 발생: ${e}`);
+    console.log('캐시 파일 읽기 실패:', e);
     return null;
   }
 };
