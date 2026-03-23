@@ -97,13 +97,12 @@ async function fetchAllData() {
 
 export async function GET() {
   try {
-    let data = await getCachedData();
-    if (!data) {
-      data = await fetchAllData();
-    }
+    // let data = await getCachedData();
+    // if (!data) {
+    //   data = await fetchAllData();
+    // }
     return NextResponse.json(soopCache);
   } catch (error: any) {
-    console.log('Error fetching player data:', error);
     console.error('Error fetching player data:', error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
