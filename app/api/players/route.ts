@@ -4,30 +4,36 @@ import path from 'path';
 
 const CACHE_PATH = path.join(process.cwd(), 'data', 'soop_cache.json');
 const CACHE_TTL = 3 * 60 * 1000;
-// const CACHE_TTL = Infinity;
+const USE_CACHE = false;
 
-// 헬퍼: 파일 존재 확인 및 데이터 로드
-async function getCachedData() {
+const getFileData = async (filePath: string) => {
   try {
-    const data = await fs.readFile(CACHE_PATH, 'utf-8');
+    const data = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(data);
-    return json;
-    // const stats = await fs.stat(CACHE_PATH);
-    // const now = Date.now();
-    // if (now - stats.mtimeMs < CACHE_TTL) {
-    //   const data = await fs.readFile(CACHE_PATH, 'utf-8');
-    //   const json = JSON.parse(data);
-    //
-    //   if (json && 0 < json.length) {
-    //     return json;
-    //   }
-    //
-    //   return null;
-    // }
+    if (json && 0 < json.faList.length) {
+      return json;
+    }
+    return null;
   } catch (e) {
     return null;
   }
-  return null;
+};
+
+async function getCachedData() {
+  try {
+    if (USE_CACHE) {
+      return await getFileData(CACHE_PATH);
+    } else {
+      const stats = await fs.stat(CACHE_PATH);
+      const now = Date.now();
+      if (now - stats.mtimeMs < CACHE_TTL) {
+        return await getFileData(CACHE_PATH);
+      }
+    }
+    return null;
+  } catch (e) {
+    return null;
+  }
 }
 
 // 헬퍼: 모든 페이지 데이터 긁어오기

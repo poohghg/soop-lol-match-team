@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add border flash animation and refactor component imports for consistency">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PageHeader.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamList.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/theme/ThemeButton.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/theme/ThemeScript.tsx" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/theme/index.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/theme/theme.ts" afterDir="false" />
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/theme/useTheme.ts" afterDir="false" />
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add theme management and refactor UI components for improved consistency">
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_theme.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_theme.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PageContent.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PageContent.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamCard.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamCard.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/FilterBar/ui/FilterBar.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Icons/ui/LoadCircleIcon.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Icons/ui/LoadCircleIcon.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/InfiniteScrollTrigger/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/InfiniteScrollTrigger/index.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/README.md" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/README.md" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/khg/Desktop/workspace/soop-lol-match-team" value="3A9jrOZDs7mePjnyVeIb0w26pKS" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedChatMode">
+    <option name="chatModeId" value="Agent" />
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -61,33 +54,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/teamList&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/teamList",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.chat.ChatConfigurable",
+    "ts.external.directory.path": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/teamList" />
@@ -122,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28539.21" />
       </set>
     </attachedChunks>
   </component>
@@ -150,6 +143,7 @@
       <workItem from="1773828648099" duration="10180000" />
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
+      <workItem from="1774256425296" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -287,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773832614438</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: add theme management and refactor UI components for improved consistency">
+      <option name="closed" value="true" />
+      <created>1774256625597</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1774256625597</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +322,8 @@
     <MESSAGE value="feat: refactor FavoritePlayerButton for improved props handling and add ToolTip component" />
     <MESSAGE value="feat: implement drag-and-drop functionality for player management and add PageContent component" />
     <MESSAGE value="feat: add border flash animation and refactor component imports for consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add border flash animation and refactor component imports for consistency" />
+    <MESSAGE value="feat: add theme management and refactor UI components for improved consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add theme management and refactor UI components for improved consistency" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -332,5 +335,13 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
