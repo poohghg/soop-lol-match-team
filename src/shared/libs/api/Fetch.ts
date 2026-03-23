@@ -21,7 +21,7 @@ class Fetch {
 
       if (!res.ok) {
         if (body.error) {
-          throw FetchFactory.error<any>(status, body.error?.message);
+          throw FetchFactory.error<any>(status, body.error);
         }
         throw FetchFactory.error<any>(status, body);
       }

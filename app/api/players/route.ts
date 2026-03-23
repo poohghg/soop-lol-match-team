@@ -12,26 +12,21 @@ const getFileData = async (filePath: string) => {
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   } catch (e) {
-    console.log('캐시 파일 읽기 실패:', e);
-    return null;
+    throw new Error(e instanceof Error ? e.message : '알 수 없는 오류');
   }
 };
 
 async function getCachedData() {
-  try {
-    if (USE_CACHE) {
+  if (USE_CACHE) {
+    return await getFileData(CACHE_PATH);
+  } else {
+    const stats = await fs.stat(CACHE_PATH);
+    const now = Date.now();
+    if (now - stats.mtimeMs < CACHE_TTL) {
       return await getFileData(CACHE_PATH);
-    } else {
-      const stats = await fs.stat(CACHE_PATH);
-      const now = Date.now();
-      if (now - stats.mtimeMs < CACHE_TTL) {
-        return await getFileData(CACHE_PATH);
-      }
     }
-    return null;
-  } catch (e) {
-    return null;
   }
+  return null;
 }
 
 // 헬퍼: 모든 페이지 데이터 긁어오기
