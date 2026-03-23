@@ -1,3 +1,4 @@
+import soopCache from '@/public/data/soop_cache.json';
 import fs from 'fs/promises';
 import { NextResponse } from 'next/server';
 import path from 'path';
@@ -96,12 +97,12 @@ async function fetchAllData() {
 
 export async function GET() {
   try {
-    let data = await getCachedData();
-    if (!data) {
-      data = await fetchAllData();
-    }
+    // let data = await getCachedData();
+    // if (!data) {
+    //   data = await fetchAllData();
+    // }
 
-    return NextResponse.json(data);
+    return NextResponse.json(soopCache);
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
