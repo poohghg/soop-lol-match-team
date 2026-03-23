@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data/soop_cache.json" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data/soop_cache.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop_cache.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop__team_list_cache.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop__team_list_cache.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop_cache.json" beforeDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop_cache_1.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop_cache_1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,11 +92,11 @@
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerTab" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch" />
-      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PlayerListSection" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: 서버 측">
@@ -143,7 +145,7 @@
       <workItem from="1773828648099" duration="10180000" />
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
-      <workItem from="1774256425296" duration="8458000" />
+      <workItem from="1774256425296" duration="9081000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -337,7 +339,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774271274607</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
+      <option name="closed" value="true" />
+      <created>1774272037037</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1774272037037</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
+      <option name="closed" value="true" />
+      <created>1774272381431</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1774272381431</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

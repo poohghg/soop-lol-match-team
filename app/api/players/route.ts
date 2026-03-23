@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import { NextResponse } from 'next/server';
 import path from 'path';
 
-const CACHE_PATH = path.join(process.cwd(), 'app/api/players/data/soop_cache.json');
+const CACHE_PATH = path.join(process.cwd(), 'public', 'data', 'soop_cache.json');
 const CACHE_TTL = 3 * 60 * 1000;
 const USE_CACHE = true;
 
