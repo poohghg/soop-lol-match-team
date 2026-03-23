@@ -5,7 +5,6 @@ import { useTeamStore } from '@/src/features/player';
 import { DraggablePlayerCard } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
 import { PlayerTab } from '@/src/page/teamMatch/ui/PlayerTab/PlayerTab';
 import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch/TeamMatch';
-import { useWindowSizes } from '@/src/shared/libs/hooks';
 import {
   defaultDropAnimationSideEffects,
   DndContext,
@@ -28,7 +27,6 @@ export const PageContent = ({ players }: { players: Player[] }) => {
       },
     })
   );
-  const { width } = useWindowSizes();
 
   const handleDragStart = (event: DragStartEvent) => {
     setActivePlayer(event.active.data.current as Player);
