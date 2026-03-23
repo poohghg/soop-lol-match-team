@@ -5,7 +5,7 @@ import { useTeamStore } from '@/src/features/player';
 import { DraggablePlayerCard } from '@/src/page/teamMatch/ui/PlayerTab/PlayerList';
 import { PlayerTab } from '@/src/page/teamMatch/ui/PlayerTab/PlayerTab';
 import { TeamMatch } from '@/src/page/teamMatch/ui/TeamMatch/TeamMatch';
-import { Spacing } from '@/src/shared/uiKit';
+import { useWindowSizes } from '@/src/shared/libs/hooks';
 import {
   defaultDropAnimationSideEffects,
   DndContext,
@@ -28,6 +28,7 @@ export const PageContent = ({ players }: { players: Player[] }) => {
       },
     })
   );
+  const { width } = useWindowSizes();
 
   const handleDragStart = (event: DragStartEvent) => {
     setActivePlayer(event.active.data.current as Player);
@@ -48,11 +49,10 @@ export const PageContent = ({ players }: { players: Player[] }) => {
 
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} sensors={sensors}>
-      <div className={`relative flex max-[800px]:flex-col`}>
-        <div className="scroll-m-0 overflow-y-auto min-[801px]:sticky min-[801px]:top-5 min-[801px]:max-h-screen min-[801px]:min-h-screen min-[801px]:w-[550px] min-[801px]:pb-30">
+      <div className={`relative flex flex-col gap-[16px] min-[1081px]:flex-row`}>
+        <div className="scroll-m-0 overflow-y-auto min-[1081px]:sticky min-[1081px]:top-5 min-[1081px]:max-h-screen min-[1081px]:min-h-screen min-[1081px]:w-[550px] min-[1081px]:pb-30">
           <TeamMatch players={players} />
         </div>
-        <Spacing size={16} />
         <div className={`flex-1`}>
           <PlayerTab players={players} />
         </div>

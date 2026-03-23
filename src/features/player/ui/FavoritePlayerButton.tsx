@@ -13,7 +13,7 @@ interface FavoriteCoinButtonProps {
 export const FavoritePlayerButton = ({
   playerId,
   className,
-  restProps,
+  ...restProps
 }: MergeElementProps<'button', FavoriteCoinButtonProps>) => {
   const toggleFavorite = useFavoritePlayerStore(state => state.toggleFavorite);
   const isFavorite = useFavoritePlayerStore(state => state.isFavorite);

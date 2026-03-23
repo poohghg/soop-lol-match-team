@@ -4,7 +4,7 @@ import path from 'path';
 
 const CACHE_PATH = path.join(process.cwd(), 'data', 'soop_cache.json');
 const CACHE_TTL = 3 * 60 * 1000;
-const USE_CACHE = false;
+const USE_CACHE = true;
 
 const getFileData = async (filePath: string) => {
   try {
@@ -84,7 +84,6 @@ async function fetchAllData() {
     currentPage++;
   }
 
-  // 파일로 저장 (data 폴더가 미리 생성되어 있어야 함)
   await fs.mkdir(path.dirname(CACHE_PATH), { recursive: true });
   await fs.writeFile(
     CACHE_PATH,

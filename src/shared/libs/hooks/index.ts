@@ -6,3 +6,4 @@ export { useDebounceState } from './useDebounceState';
 export { useThrottledCallback } from './useThrottledCallback';
 export { useVisible } from './useVisible';
 export { useOverflowHidden } from './useOverflowHidden';
+export { useWindowSizes } from './useWindowSizes';
