@@ -17,15 +17,19 @@ export const ActiveFilter = () => {
   const [isMounted, setIsMounted] = useState(false);
   const { selectedValue } = useFilterBarContext();
 
+  const setStyleForActiveIndicator = (target: HTMLButtonElement, activeEl: HTMLDivElement) => {
+    const { offsetLeft, offsetWidth } = target;
+    activeEl.style.transform = `translateX(${offsetLeft}px)`;
+    activeEl.style.width = `${offsetWidth - 4}px`;
+  };
+
   useEffect(() => {
     const handleResize = () => {
       const activeEl = document.getElementById('active-filter-indicator') as HTMLDivElement;
       if (activeEl && selectedValue) {
         const selectedButton = document.querySelector(`button[value="${selectedValue}"]`) as HTMLButtonElement;
         if (selectedButton) {
-          const { offsetLeft, offsetWidth } = selectedButton;
-          activeEl.style.transform = `translateX(${offsetLeft}px)`;
-          activeEl.style.width = `${offsetWidth}px`;
+          setStyleForActiveIndicator(selectedButton, activeEl);
         }
       }
     };
@@ -42,9 +46,7 @@ export const ActiveFilter = () => {
         if (el && selectedValue) {
           const selectedButton = document.querySelector(`button[value="${selectedValue}"]`) as HTMLButtonElement;
           if (selectedButton) {
-            const { offsetLeft, offsetWidth } = selectedButton;
-            el.style.transform = `translateX(${offsetLeft}px)`;
-            el.style.width = `${offsetWidth}px`;
+            setStyleForActiveIndicator(selectedButton, el);
             if (!isMounted) {
               setIsMounted(true);
             }
@@ -53,11 +55,11 @@ export const ActiveFilter = () => {
       }}
       id={'active-filter-indicator'}
       className={cn(
-        `pointer-events-none absolute top-0 left-0 m-[2px] rounded-[6px] bg-white shadow-[0_2px_4px_rgba(0,0,0,0.1)] duration-200 ease-out`,
+        `bg-gray-light pointer-events-none absolute top-0 left-0 m-[2px] rounded-[6px] shadow-[0_2px_4px_rgba(0,0,0,0.1)] duration-200 ease-out`,
         isMounted ? 'transition-all' : 'transition-none'
       )}
       style={{
-        height: 'calc(100% - 4px)',
+        height: 'calc(100% - 3px)',
       }}
     />
   );
@@ -76,7 +78,7 @@ export const FilterButton = ({ children, value, ...props }: MergeElementProps<'b
     <button
       className={cn(
         `relative z-10 flex h-full flex-1 items-center justify-center rounded-[6px] p-0 text-[13px] font-bold transition-all duration-100 select-none`,
-        isSelected ? 'text-blue-600' : 'text-gray-500 hover:bg-gray-200/50 hover:text-gray-700',
+        isSelected ? 'text-blue-600' : 'text-gray-500 hover:text-gray-700',
         className
       )}
       onClick={handleClick}
@@ -100,7 +102,7 @@ export const FilterBar = ({ children, defaultValue, onChange, className }: Filte
     <FilterBarContextProvider defaultValue={defaultValue} onChange={onChange}>
       <div
         className={cn(
-          'relative flex h-8 w-full items-center gap-0 overflow-x-auto overflow-y-hidden rounded-[8px] border border-gray-200/50 bg-gray-200 px-1',
+          'relative flex h-8 w-full items-center gap-0 overflow-x-auto overflow-y-hidden rounded-[8px] bg-gray-300 px-[0.5px]',
           className
         )}
       >

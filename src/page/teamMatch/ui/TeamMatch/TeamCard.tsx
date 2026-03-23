@@ -65,11 +65,15 @@ export const TeamCard = ({
   );
 };
 
-export const LazyTeamCard = dynamic(() => Promise.resolve(TeamCard), {
-  ssr: false,
-  loading: () => (
+export const SkeletonTeamCard = () => {
+  return (
     <div className="relative h-[200px] w-full overflow-hidden rounded-xl bg-gray-200">
       <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent" />
     </div>
-  ),
+  );
+};
+
+export const LazyTeamCard = dynamic(() => Promise.resolve(TeamCard), {
+  ssr: false,
+  loading: () => <SkeletonTeamCard />,
 });

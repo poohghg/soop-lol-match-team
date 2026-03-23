@@ -49,7 +49,7 @@ export const PageContent = ({ players }: { players: Player[] }) => {
   return (
     <DndContext onDragStart={handleDragStart} onDragEnd={handleDragEnd} sensors={sensors}>
       <div className={`relative flex max-[800px]:flex-col`}>
-        <div className="overflow-y-auto min-[801px]:sticky min-[801px]:top-0 min-[801px]:max-h-screen min-[801px]:min-h-screen min-[801px]:w-[550px]">
+        <div className="scroll-m-0 overflow-y-auto min-[801px]:sticky min-[801px]:top-5 min-[801px]:max-h-screen min-[801px]:min-h-screen min-[801px]:w-[550px] min-[801px]:pb-30">
           <TeamMatch players={players} />
         </div>
         <Spacing size={16} />

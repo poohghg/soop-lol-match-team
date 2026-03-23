@@ -5,6 +5,8 @@
         /* Base colors */
         --background: 255 255 255; /* 흰색 */
         --foreground: 0 0 0; /* 검정색 */
+        --gray: 107 114 128; /* 회색 */
+        --gray-light: 249 250 251; /* 연한 회색 */
         --primary: 37 99 235; /* 파랑 포인트 컬러 */
         --primary-foreground: 255 255 255; /* 흰색 텍스트 */
 
@@ -46,6 +48,8 @@
         /* Base colors */
         --background: 2 6 23; /* 다크 배경 */
         --foreground: 248 250 252; /* 밝은 텍스트 */
+        --gray: 148 163 184; /* 다크 회색 */
+        --gray-light: 30 41 59; /* 다크 연한 회색 */
         --primary: 96 165 250; /* 다크모드 포인트 컬러 */
         --primary-foreground: 2 6 23;
 
@@ -81,6 +85,8 @@
 @theme {
     --color-background: rgb(var(--background));
     --color-foreground: rgb(var(--foreground));
+    --color-gray: rgb(var(--gray));
+    --color-gray-light: rgb(var(--gray-light));
     --color-primary: rgb(var(--primary));
     --color-primary-foreground: rgb(var(--primary-foreground));
     --color-red: rgb(var(--position-top));

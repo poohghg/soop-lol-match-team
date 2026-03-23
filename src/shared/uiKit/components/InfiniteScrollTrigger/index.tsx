@@ -28,7 +28,6 @@ const InfiniteScrollTrigger = ({
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           onIntersect();
-          // observer.unobserve(entry.target);
         }
       });
     };
@@ -50,7 +49,9 @@ const InfiniteScrollTrigger = ({
         <div className={'flex h-1 w-full items-center justify-center'} ref={triggerRef} />
       </If>
       <If condition={Boolean(isLoading)}>
-        <LoadCircleIcon />
+        <div className={`mb-4 flex items-center justify-center`}>
+          <LoadCircleIcon />
+        </div>
       </If>
     </>
   );

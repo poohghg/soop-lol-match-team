@@ -2,6 +2,7 @@ import getMetadata from '@/src/app/head/metadata';
 import getViewPort from '@/src/app/head/viewport';
 import { ClientRoot } from '@/src/app/ui';
 import { ReactQueryProvider } from '@/src/shared/libs/reactQuery';
+import { ThemeScript } from '@/src/shared/libs/theme';
 import { RootDimmed, ToastList } from '@/src/shared/uiKit';
 import { Analytics } from '@vercel/analytics/next';
 import { Metadata } from 'next';
@@ -30,7 +31,10 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}>
         <RootComponent>{children}</RootComponent>
         <Analytics />

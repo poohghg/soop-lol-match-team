@@ -1,6 +1,6 @@
 'use client';
 
-import { cn, Dimmed } from '@/src/shared/uiKit';
+import { cn, Dimmed, Portal } from '@/src/shared/uiKit';
 
 interface DialogProps {
   children: React.ReactNode;
@@ -12,18 +12,7 @@ interface DialogProps {
 
 export const Dialog = ({ children, isOpen, unMount, onClose, className }: DialogProps) => {
   return (
-    <div
-      className={cn(
-        'fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
-        isOpen ? 'animate-fade-in' : 'animate-fade-out',
-        className
-      )}
-      onAnimationEnd={() => {
-        if (!isOpen) {
-          unMount();
-        }
-      }}
-    >
+    <Portal>
       <Dimmed
         onClick={() => {
           if (onClose) {
@@ -31,7 +20,20 @@ export const Dialog = ({ children, isOpen, unMount, onClose, className }: Dialog
           }
         }}
       />
-      {children}
-    </div>
+      <div
+        className={cn(
+          'fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
+          isOpen ? 'animate-fade-in' : 'animate-fade-out',
+          className
+        )}
+        onAnimationEnd={() => {
+          if (!isOpen) {
+            unMount();
+          }
+        }}
+      >
+        {children}
+      </div>
+    </Portal>
   );
 };
