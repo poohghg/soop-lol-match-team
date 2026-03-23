@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: refactor FavoritePlayerButton and update metadata for improved clarity">
-      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/ServerFetcher/ClientFetchContainer.tsx" afterDir="false" />
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
+      <change afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data/soop_cache.json" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PageContent.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/PageContent.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
     "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/teamList",
+    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/players/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -84,11 +83,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/teamList" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/api" />
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/model" />
-      <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog" />
@@ -144,7 +143,7 @@
       <workItem from="1773828648099" duration="10180000" />
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
-      <workItem from="1774256425296" duration="7687000" />
+      <workItem from="1774256425296" duration="8458000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -330,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774270166653</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
+      <option name="closed" value="true" />
+      <created>1774271274607</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1774271274607</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +373,8 @@
     <MESSAGE value="feat: add theme management and refactor UI components for improved consistency" />
     <MESSAGE value="feat: update README with project overview, tech stack, and key features" />
     <MESSAGE value="feat: refactor FavoritePlayerButton and update metadata for improved clarity" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor FavoritePlayerButton and update metadata for improved clarity" />
+    <MESSAGE value="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

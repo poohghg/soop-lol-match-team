@@ -2,11 +2,12 @@ import fs from 'fs/promises';
 import { NextResponse } from 'next/server';
 import path from 'path';
 
-const CACHE_PATH = path.join(process.cwd(), 'data', 'soop_cache.json');
+const CACHE_PATH = path.join(process.cwd(), 'app/api/players/data/soop_cache.json');
 const CACHE_TTL = 3 * 60 * 1000;
 const USE_CACHE = true;
 
 const getFileData = async (filePath: string) => {
+  console.log('     path', path.dirname(process.cwd()));
   try {
     const data = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(data);
