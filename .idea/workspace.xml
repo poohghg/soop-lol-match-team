@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher">
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: update cache paths for player data and rename cache files">
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data/soop_cache.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop_cache.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop__team_list_cache.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop__team_list_cache.json" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop_cache.json" beforeDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/data/soop_cache_1.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/public/data/soop_cache_1.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/layout.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatchPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +144,7 @@
       <workItem from="1773828648099" duration="10180000" />
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
-      <workItem from="1774256425296" duration="9081000" />
+      <workItem from="1774256425296" duration="11763000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -355,7 +354,31 @@
       <option name="project" value="LOCAL" />
       <updated>1774272381431</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774272679054</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1774272679054</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774274382605</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1774274382605</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774274804667</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1774274804667</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +415,8 @@
     <MESSAGE value="feat: update README with project overview, tech stack, and key features" />
     <MESSAGE value="feat: refactor FavoritePlayerButton and update metadata for improved clarity" />
     <MESSAGE value="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher" />
+    <MESSAGE value="feat: update cache paths for player data and rename cache files" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update cache paths for player data and rename cache files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

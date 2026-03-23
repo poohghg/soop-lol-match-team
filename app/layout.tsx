@@ -49,7 +49,7 @@ const RootComponent = ({ children }: Readonly<{ children: ReactNode }>) => {
       <RootDimmed>
         <OverlayProvider>
           <ClientRoot>
-            <div className={'relative isolate z-0 mx-auto flex max-w-[1600px] flex-col'}>{children}</div>
+            <div className={'relative isolate z-0 m-auto mx-auto flex max-w-[1600px] flex-col'}>{children}</div>
             <ToastList />
           </ClientRoot>
         </OverlayProvider>
