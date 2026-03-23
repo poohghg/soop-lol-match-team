@@ -10,6 +10,9 @@ export class PlayerApiImpl implements PlayerApi {
   async fetchPlayers() {
     const url = '/api/players';
     const res = await new FetchBuilder(url).build().request<MatchPlayerDto>();
+
+    console.log('[PlayerApi] fetchPlayers response:', res);
+
     return {
       ...res,
       data: MatchPlayerSchema.parse(res.data),
