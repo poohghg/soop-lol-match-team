@@ -11,8 +11,7 @@ const getFileData = async (filePath: string) => {
     const res = await fetch('https://soop-lol-match-team.vercel.app/data/soop_cache.json', {
       method: 'GET',
     });
-    const json = await res.json();
-    return json;
+    return await res.json();
   } catch (e) {
     console.log('캐시 파일 읽기 실패:', e);
     return null;
