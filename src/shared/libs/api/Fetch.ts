@@ -158,9 +158,7 @@ export default class FetchBuilder {
       if (this._url.startsWith('http://') || this._url.startsWith('https://')) {
         return '';
       }
-
       // 현재 도메인을 가져와야한다.
-
       return this._useMock && USE_MOCK ? MOCK_API_URL : API_URL;
     }
     return '';
