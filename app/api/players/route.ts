@@ -7,7 +7,6 @@ const CACHE_TTL = 3 * 60 * 1000;
 const USE_CACHE = true;
 
 const getFileData = async (filePath: string) => {
-  console.log('     path', path.dirname(process.cwd()));
   try {
     const data = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(data);
@@ -16,6 +15,7 @@ const getFileData = async (filePath: string) => {
     }
     return null;
   } catch (e) {
+    console.log(`캐시 파일을 읽는 중 오류 발생: ${e}`);
     return null;
   }
 };
