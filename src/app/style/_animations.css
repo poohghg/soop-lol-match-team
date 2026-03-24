@@ -3,6 +3,8 @@
     --animate-highlight-down: highlight-down 1s ease-out;
     --animate-in: in 0.2s ease-in forwards;
     --animate-out: out 0.15s ease-in forwards;
+    --animate-bottom-in: botton-in 0.1s ease-out forwards;
+    --animate-bottom-out: botton-out 0.1s ease-in forwards;
     --animate-fade-in: fade-in 0.3s ease-out forwards;
     --animate-fade-out: fade-out 0.3s ease-in forwards;
     --animate-shimmer: shimmer 0.5s linear infinite;
@@ -42,6 +44,26 @@
         to {
             opacity: 0;
             transform: scale(0.95) translateY(-20px);
+        }
+    }
+    @keyframes botton-in {
+        from {
+            transform: translateY(20px);
+            scale: 0.95;
+        }
+        to {
+            transform: translateY(0);
+            scale: 1;
+        }
+    }
+    @keyframes botton-out {
+        from {
+            transform: translateY(0);
+            scale: 1;
+        }
+        to {
+            transform: translateY(20px);
+            scale: 0.95;
         }
     }
     @keyframes fade-in {

@@ -23,7 +23,7 @@ export const Dialog = ({ children, isOpen, unMount, onClose, className }: Dialog
       <div
         className={cn(
           'fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2',
-          isOpen ? 'animate-fade-in' : 'animate-fade-out',
+          isOpen ? 'animate-bottom-in' : 'animate-bottom-out',
           className
         )}
         onAnimationEnd={() => {

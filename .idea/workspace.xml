@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: update cache paths for player data and rename cache files">
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/route.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/api/Fetch.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/libs/api/Fetch.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/ui/PlayerCard.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/ui/PlayerCard.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesPlayer.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,33 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/players/data",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.chat.ChatConfigurable",
-    "ts.external.directory.path": "/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/app/api/players/data&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.chat.ChatConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/khg/Desktop/workspace/soop-lol-match-team/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$USER_HOME$/Desktop/workspace/soop-lol-match-team/app/api/players/data" />
@@ -149,7 +153,8 @@
       <workItem from="1773828648099" duration="10180000" />
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
-      <workItem from="1774256425296" duration="13714000" />
+      <workItem from="1774256425296" duration="16103000" />
+      <workItem from="1774344316855" duration="970000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -407,7 +412,55 @@
       <option name="project" value="LOCAL" />
       <updated>1774276531539</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774277317534</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1774277317534</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774277543826</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1774277543826</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774277883554</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1774277883554</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774278151977</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1774278151977</updated>
+    </task>
+    <task id="LOCAL-00037" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774278193557</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1774278193557</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat: update cache paths for player data and rename cache files">
+      <option name="closed" value="true" />
+      <created>1774279045856</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1774279045856</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

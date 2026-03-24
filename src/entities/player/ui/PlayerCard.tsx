@@ -21,10 +21,7 @@ export const PlayerCard = memo(({ player }: { player: Player }) => {
   };
 
   return (
-    <div
-      className={cn(`bg-muted border-border hover:border-primary/50 rounded-lg border p-2 transition-all`)}
-      // style={style}
-    >
+    <div className={cn(`bg-muted border-border hover:border-primary/50 rounded-lg border p-2 transition-all`)}>
       <div className="mb-3 flex items-start justify-between">
         <div className="flex min-w-0 flex-1 items-center gap-2">
           <ToolTip
@@ -47,7 +44,7 @@ export const PlayerCard = memo(({ player }: { player: Player }) => {
             <p className="text-muted-foreground truncate text-xs">{player.gameNick}</p>
           </div>
         </div>
-        <LazyFavoritePlayerButton className={`flex-shrink-0`} playerId={player.userNick} />
+        <LazyFavoritePlayerButton className={`flex-shrink-0`} playerId={player.userId} />
       </div>
       <div className="space-y-2">
         <div className="flex items-center justify-between">
