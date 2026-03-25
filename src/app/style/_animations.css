@@ -48,8 +48,8 @@
     }
     @keyframes botton-in {
         from {
-            transform: translateY(20px);
-            scale: 0.95;
+            transform: translateY(1px);
+            scale: 0.99;
         }
         to {
             transform: translateY(0);
@@ -62,8 +62,8 @@
             scale: 1;
         }
         to {
-            transform: translateY(20px);
-            scale: 0.95;
+            transform: translateY(1px);
+            scale: 0.99;
         }
     }
     @keyframes fade-in {

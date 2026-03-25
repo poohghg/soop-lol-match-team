@@ -1,6 +1,7 @@
 'use client';
 
 import { Player } from '@/src/entities/player';
+import { PositionIdx } from '@/src/entities/player/model/type';
 import { useTeamStore } from '@/src/features/player';
 import { SectionCard } from '@/src/page/teamMatch/ui/SectionCard';
 import { AddPlayerModal } from '@/src/page/teamMatch/ui/TeamMatch/AddPlayerModal';
@@ -15,6 +16,23 @@ interface TeamMatchSectionProps {
 
 export const TeamMatch = ({ players }: TeamMatchSectionProps) => {
   const { teams, addTeam, removeTeam, changeTeamTitle, addPlayerToTeam, removePlayerFromTeam } = useTeamStore();
+
+  const handleOpenAddPlayerModal = (teamIndex: number, positionIdx: PositionIdx) => {
+    overlay.open(({ isOpen, close, unmount }) => (
+      <AddPlayerModal
+        isOpen={isOpen}
+        unMount={unmount}
+        players={players}
+        positionIdx={positionIdx}
+        onSelectPlayer={player => {
+          addPlayerToTeam(teamIndex, positionIdx, player);
+          close();
+        }}
+        onClose={() => close()}
+        query=""
+      />
+    ));
+  };
 
   return (
     <SectionCard
@@ -44,22 +62,7 @@ export const TeamMatch = ({ players }: TeamMatchSectionProps) => {
                 key={slot.positionIdx}
                 slot={slot}
                 teamIndex={teamIndex}
-                onOpenModal={() =>
-                  overlay.open(({ isOpen, close, unmount }) => (
-                    <AddPlayerModal
-                      isOpen={isOpen}
-                      unMount={unmount}
-                      players={players}
-                      positionIdx={slot.positionIdx}
-                      onSelectPlayer={player => {
-                        addPlayerToTeam(teamIndex, slot.positionIdx, player);
-                        close();
-                      }}
-                      onClose={() => close()}
-                      query={slot.player?.userNick || ''}
-                    />
-                  ))
-                }
+                onOpenModal={() => handleOpenAddPlayerModal(teamIndex, slot.positionIdx)}
                 onRemovePlayer={() => removePlayerFromTeam(teamIndex, slot.positionIdx)}
               />
             )}

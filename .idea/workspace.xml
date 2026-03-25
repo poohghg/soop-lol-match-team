@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: update cache paths for player data and rename cache files">
+    <list default="true" id="e08e3140-7828-4cb6-9c67-b528106b2337" name="변경" comment="feat: add bottom-in and bottom-out animations, update player favorites import">
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/package.json" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/pnpm-lock.yaml" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_animations.css" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/ui/PlayerCard.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/entities/player/ui/PlayerCard.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/index.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesCoins.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/lib/useFavoritesPlayer.ts" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/features/player/ui/FavoritesPlayers.tsx" afterDir="false" />
-      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_base.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_base.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_spacing.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_spacing.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_theme.css" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/app/style/_theme.css" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/AddPlayerModal.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamMatch.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/page/teamMatch/ui/TeamMatch/TeamMatch.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Dimmed/index.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/components/Dimmed/index.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/index.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/Dialog.tsx" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/DialogRoot.tsx" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/Dialog/index.ts" afterDir="false" />
+      <change beforePath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/index.ts" beforeDir="false" afterPath="$USER_HOME$/Desktop/workspace/soop-lol-match-team/src/shared/uiKit/ui/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +161,9 @@
       <workItem from="1774252125926" duration="3081000" />
       <workItem from="1774255690059" duration="618000" />
       <workItem from="1774256425296" duration="16103000" />
-      <workItem from="1774344316855" duration="970000" />
+      <workItem from="1774344316855" duration="1189000" />
+      <workItem from="1774423534570" duration="8296000" />
+      <workItem from="1774435216377" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="add initial component exports and setup for UI elements">
       <option name="closed" value="true" />
@@ -460,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774279045856</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="feat: add bottom-in and bottom-out animations, update player favorites import">
+      <option name="closed" value="true" />
+      <created>1774345361487</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1774345361487</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +515,8 @@
     <MESSAGE value="feat: refactor FavoritePlayerButton and update metadata for improved clarity" />
     <MESSAGE value="feat: add ClientFetchContainer component and refactor TeamMatchPage to use ServerFetcher" />
     <MESSAGE value="feat: update cache paths for player data and rename cache files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update cache paths for player data and rename cache files" />
+    <MESSAGE value="feat: add bottom-in and bottom-out animations, update player favorites import" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add bottom-in and bottom-out animations, update player favorites import" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

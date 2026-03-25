@@ -114,46 +114,6 @@
 }
 
 @layer utilities {
-    .bg-position-top {
-        background-color: rgb(var(--position-top));
-    }
-
-    .bg-position-jungle {
-        background-color: rgb(var(--position-jungle));
-    }
-
-    .bg-position-mid {
-        background-color: rgb(var(--position-mid));
-    }
-
-    .bg-position-adc {
-        background-color: rgb(var(--position-adc));
-    }
-
-    .bg-position-support {
-        background-color: rgb(var(--position-support));
-    }
-
-    .text-position-top {
-        color: rgb(var(--position-top));
-    }
-
-    .text-position-jungle {
-        color: rgb(var(--position-jungle));
-    }
-
-    .text-position-mid {
-        color: rgb(var(--position-mid));
-    }
-
-    .text-position-adc {
-        color: rgb(var(--position-adc));
-    }
-
-    .text-position-support {
-        color: rgb(var(--position-support));
-    }
-
     .border-position-top {
         border-color: rgb(var(--position-top) / 0.5);
     }

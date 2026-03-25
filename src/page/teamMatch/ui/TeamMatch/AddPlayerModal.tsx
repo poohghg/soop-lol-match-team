@@ -3,7 +3,7 @@
 import { Player, PlayerCard, PlayerView } from '@/src/entities/player';
 import { PositionIdx } from '@/src/entities/player/model/type';
 import { usePositionFilter, useSearchPlayer } from '@/src/features/player';
-import { Dialog, SearchBar, SeeMoreList, SwitchCase } from '@/src/shared/uiKit';
+import { DialogRoot, SearchBar, SeeMoreList, SwitchCase } from '@/src/shared/uiKit';
 import { X } from 'lucide-react';
 
 interface AddPlayerModalProps {
@@ -29,7 +29,7 @@ export function AddPlayerModal({
   const { filteredPlayers } = usePositionFilter(searchedPlayer, positionIdx);
 
   return (
-    <Dialog isOpen={isOpen} unMount={unMount} onClose={onClose}>
+    <DialogRoot isOpen={isOpen} unMount={unMount} onClose={onClose}>
       <div className="bg-card border-card-border w- flex h-[80vh] w-[80vw] flex-col rounded-xl border shadow-2xl">
         <div className="border-border flex items-center justify-between border-b p-4">
           <div>
@@ -76,6 +76,6 @@ export function AddPlayerModal({
           </div>
         </div>
       </div>
-    </Dialog>
+    </DialogRoot>
   );
 }

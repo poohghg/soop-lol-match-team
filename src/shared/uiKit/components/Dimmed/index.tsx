@@ -52,13 +52,13 @@ export const RootDimmed = memo(({ children }: { children: React.ReactNode }) => 
     };
   }, []);
 
-  const contextValue = useMemo(() => ({ updateCount, registerDimmedClick }), []);
-
   const handleDimmedClick = () => {
     const stack = dimmedClicksRef.current;
     const top = stack[stack.length - 1];
     top?.();
   };
+
+  const contextValue = useMemo(() => ({ updateCount, registerDimmedClick }), []);
 
   return (
     <DimmedProvider value={contextValue}>
