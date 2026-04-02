@@ -1,1 +1,9 @@
-export { DialogRoot } from './DialogRoot';
+export {
+  DialogRoot,
+  DialogTitle,
+  DialogOverlay,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeaderHidden,
+} from './Dialog';

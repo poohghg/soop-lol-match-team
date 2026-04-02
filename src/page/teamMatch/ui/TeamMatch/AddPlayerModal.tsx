@@ -3,8 +3,15 @@
 import { Player, PlayerCard, PlayerView } from '@/src/entities/player';
 import { PositionIdx } from '@/src/entities/player/model/type';
 import { usePositionFilter, useSearchPlayer } from '@/src/features/player';
-import { DialogRoot, SearchBar, SeeMoreList, SwitchCase } from '@/src/shared/uiKit';
-import { X } from 'lucide-react';
+import { SearchBar, SeeMoreList, SwitchCase } from '@/src/shared/uiKit';
+import {
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogOverlay,
+  DialogRoot,
+  DialogTitle,
+} from '@/src/shared/uiKit/ui/Dialog/Dialog';
 
 interface AddPlayerModalProps {
   isOpen: boolean;
@@ -29,18 +36,22 @@ export function AddPlayerModal({
   const { filteredPlayers } = usePositionFilter(searchedPlayer, positionIdx);
 
   return (
-    <DialogRoot isOpen={isOpen} unMount={unMount} onClose={onClose}>
-      <div className="bg-card border-card-border w- flex h-[80vh] w-[80vw] flex-col rounded-xl border shadow-2xl">
+    <DialogRoot isOpen={isOpen} onClose={onClose}>
+      <DialogOverlay />
+      <DialogContent
+        isOpen={isOpen}
+        unMount={unMount}
+        position={'center'}
+        className={`card flex h-[80vh] w-[80vw] flex-col rounded-xl`}
+      >
         <div className="border-border flex items-center justify-between border-b p-4">
           <div>
-            <h2 className="text-foreground text-2xl font-bold">선수 선택</h2>
-            <p className="text-muted-foreground mt-1 text-sm">
+            <DialogTitle className="text-foreground text-2xl font-bold">선수 선택</DialogTitle>
+            <DialogDescription className="text-muted-foreground mt-1 text-sm">
               {PlayerView.getPositionName(positionIdx as unknown as PositionIdx)} 포지션 선수를 선택하세요
-            </p>
+            </DialogDescription>
           </div>
-          <button onClick={onClose} className="text-muted-foreground hover:text-foreground transition-colors">
-            <X className="h-6 w-6" />
-          </button>
+          <DialogClose />
         </div>
         <div className={'px-4 py-2'}>
           <SearchBar
@@ -75,7 +86,7 @@ export function AddPlayerModal({
             />
           </div>
         </div>
-      </div>
+      </DialogContent>
     </DialogRoot>
   );
 }

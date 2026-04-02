@@ -1,0 +1,21 @@
+@layer utilities {
+    .position-center {
+        @apply fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .position-top {
+        @apply fixed top-4 left-1/2 z-50 -translate-x-1/2;
+    }
+
+    .position-bottom {
+        @apply fixed bottom-4 left-1/2 z-50 -translate-x-1/2;
+    }
+
+    .position-left {
+        @apply fixed top-1/2 left-4 z-50 -translate-y-1/2;
+    }
+
+    .position-right {
+        @apply fixed top-1/2 right-4 z-50 -translate-y-1/2;
+    }
+}

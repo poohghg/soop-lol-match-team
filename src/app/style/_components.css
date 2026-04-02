@@ -1,0 +1,6 @@
+@layer components {
+    .card {
+        @apply bg-card text-card-foreground rounded-lg shadow-md p-4;
+    }
+}
+

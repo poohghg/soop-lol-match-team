@@ -22,7 +22,7 @@ export const TeamSlotCard = memo(({ slot, teamIndex, onOpenModal, onRemovePlayer
       className={`relative flex flex-col gap-1 border-2 ${colors.border} bg-card hover:bg-muted h-[110px] justify-between rounded-lg p-1.5 transition-all hover:scale-105`}
       animationClassName={`animate-border-flash`}
       onClick={() => onOpenModal(teamIndex, slot.positionIdx)}
-      role={'button'}
+      as={'div'}
     >
       <div className={`flex items-start justify-between border-b pb-1 ${colors.border}`}>
         <div className="text-foreground text-[14px] font-semibold">{slot.position}</div>

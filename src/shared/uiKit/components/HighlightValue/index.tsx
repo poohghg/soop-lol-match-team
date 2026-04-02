@@ -1,23 +1,26 @@
 'use client';
 
 import { MergeElementProps } from '@/src/shared/type/reactElement';
-import { ReactNode, useEffect, useRef } from 'react';
+import { ElementType, ReactNode, useEffect, useRef } from 'react';
 
-interface HighlightProps<T> {
+interface HighlightProps<T, C extends ElementType = 'div'> {
   value: T;
   children: ReactNode;
   animationClassName: string;
+  as?: ElementType;
 }
 
-export const HighlightValue = <T,>({
+export const HighlightValue = <T, C extends ElementType = 'div'>({
   value,
   children,
   className,
   animationClassName,
+  as,
   ...restProps
-}: MergeElementProps<'div', HighlightProps<T>>) => {
+}: MergeElementProps<C, HighlightProps<T, C>>) => {
   const ref = useRef<HTMLDivElement>(null);
   const prevRef = useRef(value);
+  const Component = as || 'div';
 
   useEffect(() => {
     if (Object.is(prevRef.current, value)) {
@@ -47,8 +50,8 @@ export const HighlightValue = <T,>({
   }, [value, animationClassName]);
 
   return (
-    <div ref={ref} className={`${className ?? ''}`} {...restProps}>
+    <Component ref={ref} className={`${className ?? ''}`} {...restProps}>
       {children}
-    </div>
+    </Component>
   );
 };
