@@ -42,6 +42,12 @@
         --font-size: 16px;
         --font-weight-medium: 500;
         --font-weight-normal: 400;
+
+        /* Shadow variables */
+        --shadow-color: 0 0 0;
+        --shadow-opacity-1: 0.1;
+        --shadow-opacity-2: 0.06;
+
     }
 
     :root[data-theme='dark'] {
@@ -79,6 +85,12 @@
         --warning: 250 204 21;
         --error: 248 113 113;
         --info: 96 165 250;
+
+        /* Shadow variables */
+        --shadow-color: 0 0 0;
+        --shadow-opacity-1: 0.4;
+        --shadow-opacity-2: 0.25;
+
     }
 }
 
@@ -111,6 +123,7 @@
     --color-warning: rgb(var(--warning));
     --color-error: rgb(var(--error));
     --color-info: rgb(var(--info));
+    --shadow-card: 0 1px 3px rgb(var(--shadow-color) / var(--shadow-opacity-1)), 0 1px 2px rgb(var(--shadow-color) / var(--shadow-opacity-2));
 }
 
 @layer utilities {

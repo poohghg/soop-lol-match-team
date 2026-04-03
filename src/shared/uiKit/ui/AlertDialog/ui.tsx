@@ -63,7 +63,8 @@ export const AlertDialogContent = ({
     <AlertDialogPrimitives.Content
       className={cn(
         positionClasses[position] ? positionClasses[position] : undefined,
-        'card w-[80vw] max-w-[360px]',
+        'card w-[80vw] max-w-[360px] p-0',
+        'flex flex-col items-center justify-between',
         'data-[state=open]:animate-dialog-in data-[state=closed]:animate-dialog-out',
         className
       )}
@@ -71,6 +72,9 @@ export const AlertDialogContent = ({
         if (!isOpen) {
           unMount();
         }
+      }}
+      onOpenAutoFocus={e => {
+        e.preventDefault();
       }}
       {...props}
     >
@@ -80,14 +84,11 @@ export const AlertDialogContent = ({
 };
 
 export const AlertDialogHeader = ({ className, ...props }: React.ComponentProps<'div'>) => (
-  <div className={cn(`flex flex-col items-center gap-2`, className)} {...props} />
+  <div className={cn(`flex min-h-20 w-full flex-col items-center justify-center gap-1 py-3`, className)} {...props} />
 );
 
 export const AlertDialogFooter = ({ className, ...props }: React.ComponentProps<'div'>) => (
-  <div
-    className={cn('border-card-border mt-4 flex items-center justify-center gap-2 border-t', className)}
-    {...props}
-  />
+  <div className={cn('border-card-border flex w-full items-center justify-between border-t', className)} {...props} />
 );
 
 export const AlertDialogTitle = ({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitives.Title>) => (
@@ -98,7 +99,7 @@ export const AlertDialogDescription = ({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitives.Description>) => (
-  <AlertDialogPrimitives.Description className={cn('text-muted-foreground mt-2 text-sm', className)} {...props} />
+  <AlertDialogPrimitives.Description className={cn('text-muted-foreground text-sm', className)} {...props} />
 );
 
 export const AlertDialogTitleHidden = ({ ...props }: React.ComponentProps<typeof AlertDialogPrimitives.Title>) => {
@@ -126,7 +127,8 @@ export const AlertDialogCancel = ({
 }: React.ComponentProps<typeof AlertDialogPrimitives.Cancel>) => (
   <AlertDialogPrimitives.Cancel
     className={cn(
-      'hover:bg-accent inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium',
+      'inline-flex flex-1 items-center justify-center py-3 text-sm font-medium',
+      'border-card-border hover:bg-primary/10 border-r',
       className
     )}
     {...props}
@@ -142,7 +144,8 @@ export const AlertDialogAction = ({
 }: React.ComponentProps<typeof AlertDialogPrimitives.Action>) => (
   <AlertDialogPrimitives.Action
     className={cn(
-      'bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium',
+      'inline-flex flex-1 items-center justify-center py-3 text-sm font-medium',
+      `text-primary hover:bg-primary/10`,
       className
     )}
     {...props}

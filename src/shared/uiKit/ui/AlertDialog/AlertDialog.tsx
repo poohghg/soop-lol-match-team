@@ -1,42 +1,50 @@
+'use client';
+
 import {
+  AlertDialogAction,
+  AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogDescriptionHidden,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogOverlay,
   AlertDialogRoot,
+  AlertDialogTitle,
 } from '@/src/shared/uiKit/ui/AlertDialog/ui';
-import { AlertDialogDescription, AlertDialogTitle } from '@radix-ui/react-alert-dialog';
+import { overlay } from 'overlay-kit';
 import React from 'react';
+
+interface OpenAlertDialogOptions {
+  title: string;
+  description?: string;
+}
+
+export const openAlertDialog = async ({ title, description }: OpenAlertDialogOptions) => {
+  return await overlay.openAsync<boolean>(({ isOpen, close, unmount }) => (
+    <AlertDialog
+      isOpen={isOpen}
+      onClose={() => close(false)}
+      onConfirm={() => close(true)}
+      unMount={unmount}
+      title={title}
+      description={description}
+    />
+  ));
+};
 
 interface AlertDialogProps {
   isOpen: boolean;
-  onClose: () => void;
   title: string;
   description?: string;
+  onClose: () => void;
+  onConfirm: () => void;
   unMount?: () => void;
-  onConfirm?: () => void;
-  onCancel?: () => void;
 }
 
-export const AlertDialog = ({
-  isOpen,
-  onClose,
-  title = '알림',
-  description,
-  unMount,
-  onConfirm,
-  onCancel,
-}: AlertDialogProps) => {
-  const handleClose = () => {
-    if (onCancel) {
-      onCancel();
-    }
-    onClose();
-  };
-
+export const AlertDialog = ({ isOpen, onClose, title = '알림', description, unMount, onConfirm }: AlertDialogProps) => {
   return (
-    <AlertDialogRoot isOpen={isOpen} onClose={handleClose}>
+    <AlertDialogRoot isOpen={isOpen} onClose={onClose}>
       <AlertDialogOverlay />
       <AlertDialogContent isOpen={isOpen} unMount={() => unMount && unMount()}>
         <AlertDialogHeader>
@@ -48,9 +56,8 @@ export const AlertDialog = ({
           )}
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <A
-          {/*<AlertDialogCancel onClick={() => setIsOpen(false)}>취소</AlertDialogCancel>*/}
-          {/*<AlertDialogAction onClick={() => setIsOpen(false)}>확인</AlertDialogAction>*/}
+          <AlertDialogCancel onClick={onClose}>취소</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm}>확인</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialogRoot>
