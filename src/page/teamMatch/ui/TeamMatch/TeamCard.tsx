@@ -1,7 +1,8 @@
-import { Team, TeamSlot } from '@/src/features/player';
-import { cn } from '@/src/shared/uiKit';
-import { useDroppable } from '@dnd-kit/core';
+'use client';
 
+import { Team, TeamSlot } from '@/src/features/player';
+import { cn, openAlert, openConfirm } from '@/src/shared/uiKit';
+import { useDroppable } from '@dnd-kit/core';
 import { X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 
@@ -29,6 +30,24 @@ export const TeamCard = ({
     },
   });
 
+  const handleDeleteTeam = async () => {
+    const isConfirmed = await openConfirm({
+      title: '팀 삭제',
+      description: <span className="font-bold text-red-500">정말 이 팀을 삭제하시겠습니까?</span>,
+      cancelText: '취소',
+      confirmText: '삭제',
+    });
+
+    if (isConfirmed) {
+      await openAlert({
+        title: '팀이 삭제되었습니다.',
+        description: '팀을 삭제했습니다. 변경 사항이 저장되었습니다.',
+      });
+
+      onRemoveTeam(teamIndex);
+    }
+  };
+
   return (
     <div
       ref={setNodeRef}
@@ -47,10 +66,7 @@ export const TeamCard = ({
           placeholder={`팀 #${teamIndex + 1}`}
         />
         {isRemovable && (
-          <button
-            onClick={() => onRemoveTeam(teamIndex)}
-            className="text-muted-foreground transition-colors hover:text-red-500"
-          >
+          <button onClick={handleDeleteTeam} className="text-muted-foreground transition-colors hover:text-red-500">
             <X className="h-5 w-5" />
           </button>
         )}

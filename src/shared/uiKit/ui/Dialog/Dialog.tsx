@@ -9,7 +9,7 @@ import React from 'react';
 interface DialogRootProps {
   children: React.ReactNode;
   isOpen: boolean;
-  onClose: () => void; // unMount 대신 onClose를 주력으로 사용 (Radix 내부 상태와 동기화)
+  onClose: () => void;
   className?: string;
 }
 

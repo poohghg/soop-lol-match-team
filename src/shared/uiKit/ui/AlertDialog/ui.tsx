@@ -2,7 +2,7 @@
 
 import { cn } from '@/src/shared/uiKit';
 import { AlertDialog as AlertDialogPrimitives, VisuallyHidden } from 'radix-ui';
-import React from 'react';
+import React, { isValidElement } from 'react';
 
 interface AlertDialogRootProps {
   children: React.ReactNode;
@@ -34,6 +34,7 @@ export const AlertDialogOverlay = ({
       className={cn(
         'fixed inset-0 z-50 bg-black/50 backdrop-blur-sm',
         'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out',
+        '[--fade-in-duration:5000ms] [--fade-out-duration:5000ms]',
         className
       )}
       {...props}
@@ -84,22 +85,36 @@ export const AlertDialogContent = ({
 };
 
 export const AlertDialogHeader = ({ className, ...props }: React.ComponentProps<'div'>) => (
-  <div className={cn(`flex min-h-20 w-full flex-col items-center justify-center gap-1 py-3`, className)} {...props} />
+  <div className={cn(`flex min-h-20 w-full flex-col items-center justify-center gap-1 p-3`, className)} {...props} />
 );
 
 export const AlertDialogFooter = ({ className, ...props }: React.ComponentProps<'div'>) => (
   <div className={cn('border-card-border flex w-full items-center justify-between border-t', className)} {...props} />
 );
 
-export const AlertDialogTitle = ({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitives.Title>) => (
-  <AlertDialogPrimitives.Title className={cn('text-lg font-semibold', className)} {...props} />
+export const AlertDialogTitle = ({
+  className,
+  asChild,
+
+  ...props
+}: React.ComponentProps<typeof AlertDialogPrimitives.Title>) => (
+  <AlertDialogPrimitives.Title
+    className={cn('text-lg font-semibold', className)}
+    asChild={isValidElement(props.children)}
+    {...props}
+  />
 );
 
 export const AlertDialogDescription = ({
   className,
+  asChild,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitives.Description>) => (
-  <AlertDialogPrimitives.Description className={cn('text-muted-foreground text-sm', className)} {...props} />
+  <AlertDialogPrimitives.Description
+    className={cn('text-muted-foreground text-center text-sm', className)}
+    asChild={isValidElement(props.children)}
+    {...props}
+  />
 );
 
 export const AlertDialogTitleHidden = ({ ...props }: React.ComponentProps<typeof AlertDialogPrimitives.Title>) => {

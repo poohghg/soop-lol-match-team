@@ -2,6 +2,7 @@
 
 import {
   AlertDialogAction,
+  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogDescriptionHidden,
@@ -14,40 +15,49 @@ import {
 import { overlay } from 'overlay-kit';
 import React from 'react';
 
-interface OpenAlertOptions {
+interface OpenConfirmOptions {
   title: React.ReactNode;
   description?: React.ReactNode;
+  cancelText?: string;
   confirmText?: string;
 }
 
-export const openAlert = async ({ title, description, confirmText }: OpenAlertOptions) => {
-  return await new Promise<void>(resolve => {
-    overlay.open(({ isOpen, close, unmount }) => (
-      <AlertDialog
-        isOpen={isOpen}
-        onClose={() => {
-          close();
-          resolve();
-        }}
-        unMount={unmount}
-        title={title}
-        description={description}
-        confirmText={confirmText}
-      />
-    ));
-  });
+export const openConfirm = async ({ title, description, cancelText, confirmText }: OpenConfirmOptions) => {
+  return await overlay.openAsync<boolean>(({ isOpen, close, unmount }) => (
+    <ConfirmDialog
+      isOpen={isOpen}
+      onClose={() => close(false)}
+      onConfirm={() => close(true)}
+      unMount={unmount}
+      title={title}
+      description={description}
+      cancelText={cancelText}
+      confirmText={confirmText}
+    />
+  ));
 };
 
-interface AlertDialogProps {
+interface ConfirmDialogProps {
   isOpen: boolean;
   title: React.ReactNode;
   description?: React.ReactNode;
-  confirmText?: string;
   onClose: () => void;
+  onConfirm: () => void;
   unMount?: () => void;
+  cancelText?: string;
+  confirmText?: string;
 }
 
-export const AlertDialog = ({ isOpen, onClose, title, description, unMount, confirmText }: AlertDialogProps) => {
+export const ConfirmDialog = ({
+  isOpen,
+  onClose,
+  title,
+  description,
+  unMount,
+  onConfirm,
+  cancelText,
+  confirmText,
+}: ConfirmDialogProps) => {
   return (
     <AlertDialogRoot isOpen={isOpen} onClose={onClose}>
       <AlertDialogOverlay />
@@ -61,7 +71,8 @@ export const AlertDialog = ({ isOpen, onClose, title, description, unMount, conf
           )}
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogAction onClick={onClose}>{confirmText}</AlertDialogAction>
+          <AlertDialogCancel onClick={onClose}>{cancelText}</AlertDialogCancel>
+          <AlertDialogAction onClick={onConfirm}>{confirmText}</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialogRoot>

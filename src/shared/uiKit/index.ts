@@ -23,4 +23,33 @@ export {
 
 export type { BaseTab } from './components';
 
-export { ToolTip, Spacing, Button, RadioGroup, RadioGroupItem, Label, Dialog } from './ui';
+export {
+  ToolTip,
+  Spacing,
+  Button,
+  RadioGroup,
+  RadioGroupItem,
+  Label,
+  DialogRoot,
+  DialogHeaderHidden,
+  DialogDescription,
+  DialogContent,
+  DialogClose,
+  DialogOverlay,
+  DialogTitle,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogDescriptionHidden,
+  AlertDialogOverlay,
+  AlertDialogRoot,
+  AlertDialogTitleHidden,
+  openConfirm,
+  openAlert,
+  ConfirmDialog,
+  AlertDialog,
+} from './ui';
